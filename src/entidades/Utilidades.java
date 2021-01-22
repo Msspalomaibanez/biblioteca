@@ -78,6 +78,16 @@ public class Utilidades {
     };
     public static final int numGeneros = GENEROS.length;
 
+    public static final Elemento ELEMENTOS[] = {
+        new Libro(1, "La Comunidad de los Anillos", "Ediciones Minotauro", "J. R. R. Tolkien", "568"),
+        new Libro(2, "Aquitania", "Editorial Planeta", "Eva García Sáen de Uruti", "416"),
+        new Libro(3, "Línea de fuego", "Alfaguara", "Arturo Pérez-Reverte", "688"),
+        new DVD(4, "Harry Potter y la Piedra Filosofal"),
+        new DVD(5, "Frozen"),
+        new DVD(6, "Interstellar")
+    };
+    public static final int numElementos = ELEMENTOS.length;
+
     /**
      * public Estanteria(int id, char codigo, String ubicacion, boolean
      * completa)
@@ -98,27 +108,6 @@ public class Utilidades {
         new Lote(3, "10-1-2020")
     };
     public static final int numLotes = LOTES.length;
-
-    /**
-     * public Libro(int id, String nombre, String editorial, String autor,
-     * String pagina)
-     */
-    public static final Libro LIBROS[] = {
-        new Libro(1, "La Comunidad de los Anillos", "Ediciones Minotauro", "J. R. R. Tolkien", "568"),
-        new Libro(2, "Aquitania", "Editorial Planeta", "Eva García Sáen de Uruti", "416"),
-        new Libro(3, "Línea de fuego", "Alfaguara", "Arturo Pérez-Reverte", "688")
-    };
-    public static final int numLibros = LIBROS.length;
-
-    /**
-     * public DVD(int id, String titulo)
-     */
-    public static final DVD DVDS[] = {
-        new DVD(1, "Harry Potter y la Piedra Filosofal"),
-        new DVD(2, "Frozen"),
-        new DVD(3, "Interstellar")
-    };
-    public static final int numDVDs = DVDS.length;
 
     public static final String formatString = "dd-MM-yyyy";
     public static final DateTimeFormatter iso = DateTimeFormatter.ofPattern(formatString);
