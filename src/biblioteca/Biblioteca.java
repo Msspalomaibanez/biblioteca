@@ -24,8 +24,8 @@ public class Biblioteca {
         Socio socio1 = Socio.nuevoSocio();
         Scanner in = new Scanner(System.in);
         char opcion = '-';
-        
-        do{
+
+        do {
             System.out.println("¿El socio tiene alguna penalización? (S/N)");
             opcion = in.nextLine().charAt(0);
             if (opcion == 'N' || opcion == 'n') {
@@ -34,27 +34,22 @@ public class Biblioteca {
                 socio1.setPenalizacion(true);
                 Penalizacion penalizacion = Penalizacion.nuevaPenalizacion();
             }
-        }while (opcion != 'N' && opcion != 'S' && opcion != 'n' && opcion != 's');
-        
-        
+        } while (opcion != 'N' && opcion != 'S' && opcion != 'n' && opcion != 's');
+
         do {
             System.out.println("¿Va a solicitar un préstamo? (S/N)");
             opcion = in.nextLine().charAt(0);
-            
+
             if (opcion == 'N' || opcion == 'n') {
                 break;
             } else if (opcion == 'S' || opcion == 's') {
                 System.out.println("Espere a ser atendido");
                 Prestamo prestamo = Prestamo.nuevoPrestamo();
                 socio1.getPrestamos().add(prestamo);
-                
-                
+
             }
 
         } while (opcion != 'N' && opcion != 'S' && opcion != 'n' && opcion != 's');
 
-            
-        }
     }
-
-
+}
