@@ -5,6 +5,8 @@
  */
 package entidades;
 
+import java.util.Scanner;
+
 /**
  *
  * @author USUARIO
@@ -41,6 +43,16 @@ public class Lote {
     
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+    
+    public static Lote nuevoLote() {
+        Lote lt = new Lote();
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Introduce la fecha de entrega del nuevo lote:");
+        lt.setFecha(in.nextLine());
+        
+        return lt;
     }
     
 }
