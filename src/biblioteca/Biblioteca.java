@@ -20,6 +20,58 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        /**
+         * MENÚ
+         * 
+         * int opcion = 1;
+         * Scanner in = new Scanner (System.in);
+         * 
+         * do {
+         * 
+         * mostrarMenuPrincipal();
+         * opcion = in.nextInt();
+         * 
+         * if (opcion  < 0 || opcion > 3){
+         * System.out.println("Opción incorrecta!");
+         * continue;
+         * 
+         * }
+         * 
+         * switch (opcion){
+         * 
+         * case 1: // se ha pulsado la opcion Gestion de Socios
+         * break;
+         * 
+         * case 2: // se ha pulsado la opcion Gestion de Elementos
+         * break;
+         * 
+         * case 3: // se ha pulsado la opcion Gestion de Eventos
+         * break;
+         * 
+         * case 0: // se ha pulsado salir
+         * continue;
+         * 
+         * default: // opcion incorrecta
+         * 
+         * }
+         * 
+         * opcion = -1;
+         * 
+         * } while (opcion < 0 || opcion > 3);
+         * 
+         * 
+         * private static void mostrarMenuPrincipal() {
+         * 
+         * System.out.println ("Pulse 1 para Gestionar los Socios");
+         * System.out.println ("Pulse 2 para Gestionar los Elementos");
+         * System.out.println ("Pulse 3 para Gestionar los Eventos");
+         * System.out.println ("Pulse 0 para salir");
+         * 
+         * 
+         * }
+         * 
+         */
 
         Socio socio1 = Socio.nuevoSocio();
         Scanner in = new Scanner(System.in);
