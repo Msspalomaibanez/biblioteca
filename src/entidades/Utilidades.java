@@ -123,43 +123,30 @@ public class Utilidades {
     public static final String formatString = "dd-MM-yyyy";
     public static final DateTimeFormatter iso = DateTimeFormatter.ofPattern(formatString);
 
-    //dtf:dateFormatter
-    public static final Curso CURSOS[] = {
+    public static final Evento EVENTOS[] = {
         new Curso(1, "Aula 1", 1, "Curso 1", Date.valueOf(LocalDate.parse("02-01-2020"))),
         new Curso(2, "Aula 2", 2, "Curso 2", Date.valueOf(LocalDate.parse("02-02-2020"))),
         new Curso(3, "Aula 3", 3, "Curso 3", Date.valueOf(LocalDate.parse("02-03-2020"))),
         new Curso(4, "Aula 4", 4, "Curso 4", Date.valueOf(LocalDate.parse("02-04-2020"))),
         new Curso(5, "Aula 5", 5, "Curso 5", Date.valueOf(LocalDate.parse("02-05-2020"))),
-        new Curso(6, "Aula 6", 6, "Curso 6", Date.valueOf(LocalDate.parse("02-06-2020"))),};
-
-    public static final Concurso CONCURSOS[] = {
-        new Concurso("Tipo A", "ViajeMadrid", 1, "Concurso 1", Date.valueOf(LocalDate.parse("02-06-2017"))),
-        new Concurso("Tipo B", "ViajeBarcelona", 2, "Concurso 2", Date.valueOf(LocalDate.parse("02-07-2019"))),
-        new Concurso("Tipo C", "ViajeAlmania", 3, "Concurso 3", Date.valueOf(LocalDate.parse("02-08-2014"))),
-        new Concurso("Tipo D", "Viajekoria", 4, "Concurso 4", Date.valueOf(LocalDate.parse("02-09-2016"))),
-        new Concurso("Tipo E", "ViajeJapon", 5, "Concurso 5", Date.valueOf(LocalDate.parse("02-10-2017"))),};
-
-    public static final Lectura[] LECTURA = {
-        new Lectura("Libro A", 1, "The Great Gatsby", Date.valueOf(LocalDate.parse("02-11-2020"))),
-        new Lectura("Libro B", 2, "War and Peace", Date.valueOf(LocalDate.parse("02-12-2019"))),
-        new Lectura("Libro C", 3, "Beautiful Things", Date.valueOf(LocalDate.parse("13-01-2017"))),
-        new Lectura("Libro D", 4, "The Catcher in the Rye", Date.valueOf(LocalDate.parse("14-02-2018"))),
-        new Lectura("Libro E", 5, "The Iliad", Date.valueOf(LocalDate.parse("15-03-2016"))),};
-
-    public static final Visionado VISIONADO[] = {
+        new Curso(6, "Aula 6", 6, "Curso 6", Date.valueOf(LocalDate.parse("02-06-2020"))),
+        new Concurso("Tipo A", "ViajeMadrid", 7, "Concurso 1", Date.valueOf(LocalDate.parse("02-06-2017"))),
+        new Concurso("Tipo B", "ViajeBarcelona", 8, "Concurso 2", Date.valueOf(LocalDate.parse("02-07-2019"))),
+        new Concurso("Tipo C", "ViajeAlmania", 9, "Concurso 3", Date.valueOf(LocalDate.parse("02-08-2014"))),
+        new Concurso("Tipo D", "Viajekoria", 10, "Concurso 4", Date.valueOf(LocalDate.parse("02-09-2016"))),
+        new Concurso("Tipo E", "ViajeJapon", 11, "Concurso 5", Date.valueOf(LocalDate.parse("02-10-2017"))),
+        new Lectura("Libro A", 7, "The Great Gatsby", Date.valueOf(LocalDate.parse("02-11-2020"))),
+        new Lectura("Libro B", 8, "War and Peace", Date.valueOf(LocalDate.parse("02-12-2019"))),
+        new Lectura("Libro C", 9, "Beautiful Things", Date.valueOf(LocalDate.parse("13-01-2017"))),
+        new Lectura("Libro D", 10, "The Catcher in the Rye", Date.valueOf(LocalDate.parse("14-02-2018"))),
+        new Lectura("Libro E", 11, "The Iliad", Date.valueOf(LocalDate.parse("15-03-2016"))),
         new Visionado("La casa de papel 1", "Aula A"),
         new Visionado("La casa de papel 2", "Aula B"),
         new Visionado("La casa de papel 3", "Aula C"),
         new Visionado("Vis a Vis", "Aula D"),
         new Visionado("The end", "Aula E"),};
 
-    public static final int numCURSOS = CURSOS.length;
-
-    public static final int numCONCURSOS = CONCURSOS.length;
-
-    public static final int numVISIONADO = VISIONADO.length;
-
-    public static final int numLECTURA = LECTURA.length;
+    public static final int numEventos = EVENTOS.length;
 
     public static Date DameFecha() {
         Date date = null;
