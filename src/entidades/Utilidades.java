@@ -103,9 +103,9 @@ public class Utilidades {
      * public Lote(int id, String fecha)
      */
     public static final Lote LOTES[] = {
-        new Lote(1, "4-1-2020"),
-        new Lote(2, "6-1-2020"),
-        new Lote(3, "10-1-2020")
+        new Lote(1, "04-01-2020"),
+        new Lote(2, "06-01-2020"),
+        new Lote(3, "10-01-2020")
     };
     public static final int numLotes = LOTES.length;
 
