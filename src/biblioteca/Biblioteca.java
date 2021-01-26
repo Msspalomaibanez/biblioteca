@@ -152,7 +152,7 @@ public class Biblioteca {
         
         
         
-        
+       /** 
         
         Socio socio1 = Socio.nuevoSocio();
         Scanner in = new Scanner(System.in);
@@ -183,6 +183,6 @@ public class Biblioteca {
             }
 
         } while (opcion != 'N' && opcion != 'S' && opcion != 'n' && opcion != 's');
-
+*/
     }
-}
+
