@@ -23,16 +23,18 @@ public class Biblioteca {
         
         /**
          * MENÚ
+         * 
          */
-          int opcion = 1;
+          int opcion1 = -1;
+          int opcion2 = -1;
           Scanner in = new Scanner (System.in);
           
           do {
           
           mostrarMenuPrincipal();
-              int opcion1 = in.nextInt();
+              opcion1 = in.nextInt();
           
-          if (opcion1  < 0 || opcion > 3){
+          if (opcion1  < 0 || opcion1 > 3){
           System.out.println("Opción incorrecta!");
           continue;
           
@@ -48,7 +50,7 @@ public class Biblioteca {
           
           mostrarMenuSocios();
           in = new Scanner(System.in, "ISO-8859-1");
-          int opcion2 = in.nextInt();
+          opcion2 = in.nextInt();
           
           if (opcion2 < 0 || opcion2 > 4) {
           System.out.println("Opción incorrecta");
@@ -75,9 +77,9 @@ public class Biblioteca {
           
           }
           
-          opcion = -1;
+          opcion1 = -1;
           
-          } while (opcion < 0 || opcion > 3);
+          } while (opcion1 < 0 || opcion1 > 3);
           
           
           private static void mostrarMenuPrincipal() {
