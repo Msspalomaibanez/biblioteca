@@ -30,7 +30,7 @@ public class Biblioteca {
           do {
           
           mostrarMenuPrincipal();
-          opcion1 = in.nextInt();
+              int opcion1 = in.nextInt();
           
           if (opcion1  < 0 || opcion > 3){
           System.out.println("Opción incorrecta!");
@@ -48,7 +48,7 @@ public class Biblioteca {
           
           mostrarMenuSocios();
           in = new Scanner(System.in, "ISO-8859-1");
-          opcion2 = in.nextInt();
+          int opcion2 = in.nextInt();
           
           if (opcion2 < 0 || opcion2 > 4) {
           System.out.println("Opción incorrecta");
