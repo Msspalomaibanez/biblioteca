@@ -18,7 +18,7 @@ public class Estanteria {
     private String ubicacion;
     private boolean completa;
     private Genero genero;
-    private ArrayList<Elemento> elementos;
+    private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
 
     public Estanteria() {
     }
