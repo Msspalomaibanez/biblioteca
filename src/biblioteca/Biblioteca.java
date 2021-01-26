@@ -41,6 +41,10 @@ public class Biblioteca {
          * switch (opcion){
          * 
          * case 1: // se ha pulsado la opcion Gestion de Socios
+         * 
+         * System
+         * 
+         * 
          * break;
          * 
          * case 2: // se ha pulsado la opcion Gestion de Elementos
@@ -101,6 +105,41 @@ public class Biblioteca {
          * 
          */
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         Socio socio1 = Socio.nuevoSocio();
         Scanner in = new Scanner(System.in);
         char opcion = '-';
