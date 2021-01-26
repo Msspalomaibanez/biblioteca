@@ -30,19 +30,34 @@ public class Biblioteca {
          * do {
          * 
          * mostrarMenuPrincipal();
-         * opcion = in.nextInt();
+         * opcion1 = in.nextInt();
          * 
-         * if (opcion  < 0 || opcion > 3){
+         * if (opcion1  < 0 || opcion > 3){
          * System.out.println("Opción incorrecta!");
          * continue;
          * 
          * }
          * 
-         * switch (opcion){
+         * switch (opcion1){
          * 
          * case 1: // se ha pulsado la opcion Gestion de Socios
          * 
-         * System
+         * System.out.println ("\n Se ha pulsado la Gestión de Socios");
+         * 
+         * do{
+         * 
+         * mostrarMenuSocios();
+         * in = new Scanner(System.in, "ISO-8859-1");
+         * opcion2 = in.nextInt();
+         * 
+         * if (opcion2 < 0 || opcion2 > 4) {
+         * System.out.println("Opción incorrecta");
+         * continue;
+         * }
+         * 
+         * gestionSocios(opcion2, socios);
+         * 
+         * } while (opcion2 !=0);
          * 
          * 
          * break;
