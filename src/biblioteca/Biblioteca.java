@@ -63,12 +63,40 @@ public class Biblioteca {
          * 
          * private static void mostrarMenuPrincipal() {
          * 
+         * System.out.println (" - - - - - MENÚ PRINCIPAL - - - - - ");
          * System.out.println ("Pulse 1 para Gestionar los Socios");
          * System.out.println ("Pulse 2 para Gestionar los Elementos");
          * System.out.println ("Pulse 3 para Gestionar los Eventos");
          * System.out.println ("Pulse 0 para salir");
+         * }
          * 
+         * private static void mostrarMenuSocios() {
          * 
+         * System.out.println (" - - - - - MENÚ SOCIOS - - - - - ");
+         * System.out.println ("Pulse 1 para Ver la lista de Socios");
+         * System.out.println ("Pulse 2 para Crear un nuevo Socio");
+         * System.out.println ("Pulse 3 para Buscar un Socio");
+         * System.out.println ("Pulse 0 para salir");
+         * }
+         * 
+         * private static void mostrarMenuElementos() {
+         * 
+         * System.out.println (" - - - - - MENÚ ELEMENTOS - - - - - ");
+         * System.out.println ("Pulse 1 para Ver la lista de Elementos");
+         * System.out.println ("Pulse 2 para Crear un nuevo Elemento");
+         * System.out.println ("Pulse 3 para Buscar un Elemento");
+         * System.out.println ("Pulse 4 para Hacer un Préstamo");
+         * System.out.println ("Pulse 0 para salir");
+         * }
+         * 
+         * private static void mostrarMenuEvento() {
+         * 
+         * System.out.println (" - - - - - MENÚ EVENTOS - - - - - ");
+         * System.out.println ("Pulse 1 para Ver la lista de Eventos");
+         * System.out.println ("Pulse 2 para Crear un nuevo Evento");
+         * System.out.println ("Pulse 3 para Buscar un Evento");
+         * System.out.println ("Pulse 4 para Participar en un Evento");
+         * System.out.println ("Pulse 0 para salir");
          * }
          * 
          */
