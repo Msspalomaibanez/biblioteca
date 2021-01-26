@@ -86,4 +86,49 @@ public class Elemento {
             System.out.println(e.getId() + ":" + e.getClass().getSimpleName());
         }
     }
+    
+    public static void buscarElementos(ArrayList<Elemento> elementos) {
+        Elemento buscado;
+        ArrayList<Elemento> encontrados;
+        Scanner in;
+        int opcion = -1;
+        do {
+            buscado = null;
+            encontrados = new ArrayList<Elemento>();
+            in = new Scanner(System.in, "ISO-8859-1");
+            System.out.println("Pulse 1 para buscar elemento por ID.");
+            System.out.println("Pulse 0 para VOLVER.");
+            opcion = in.nextInt();
+            if (opcion < 0 || opcion > 1) {
+                System.out.println("Opción incorrecta.");
+                continue;
+            }
+            in = new Scanner(System.in, "ISO-8859-1");
+            switch (opcion) {
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Introduzca el ID del elemento a encontrar:");
+                    int idEle = in.nextInt();
+                    buscado = Elemento.buscarElementoPorId(idEle, elementos);
+                    if (buscado != null) {
+                        System.out.println("Empleado encontrado: ");
+                        System.out.println(buscado.getId() + ". " + buscado.getClass().getSimpleName());
+                    }
+                default:
+                    break;
+            }
+        } while (opcion != 0);
+    }
+    
+    public static Elemento buscarElementoPorId(int idElemento, ArrayList<Elemento> elementos) {
+        Elemento ret = null;
+        for (Elemento e : elementos) {
+            if (e.getId() == idElemento) {
+                ret = e;
+                break;
+            }
+        }
+        return ret;
+    }
 }
