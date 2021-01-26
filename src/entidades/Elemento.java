@@ -5,6 +5,7 @@
  */
 package entidades;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -68,7 +69,7 @@ public class Elemento {
 
         return elm;
     }
-    
+
     public static long nextIdElemento() {
         long ret = 0;
         for (Elemento e : Utilidades.ELEMENTOS) {
@@ -77,5 +78,12 @@ public class Elemento {
             }
         }
         return ret + 1;
+    }
+    
+    public static void verElemento (ArrayList<Elemento> elementos) {
+        System.out.println("El programa tiene almacenados los siguientes elementos: ");
+        for (Elemento e : elementos) {
+            System.out.println(e.getId() + ":" + e.getClass().getSimpleName());
+        }
     }
 }
