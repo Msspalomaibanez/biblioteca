@@ -168,6 +168,20 @@ public class Socio {
        return soc;
    }
 
+   
+   public static void verSocio (ArrayList<Socio> socios) {
+       System.out.println("El programa tiene almacenados los siguientes socios: ");
+       for (Socio s : socios) {
+           System.out.println(s.getId() + ": " + s.getNombre() + " " + s.getApellidos() );
+       }
+       
+       
+       
+   }   
+   
+   
+   
+   
     @Override
     public String toString() {
         return "Socio{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + ", direccion=" + direccion + ", penalizacion=" + penalizacion + ", eventos=" + eventos + ", prestamos=" + prestamos + '}';
