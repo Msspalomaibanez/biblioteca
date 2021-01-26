@@ -68,4 +68,14 @@ public class Elemento {
 
         return elm;
     }
+    
+    public static long nextIdElemento() {
+        long ret = 0;
+        for (Elemento e : Utilidades.ELEMENTOS) {
+            if (e.getId() > ret) {
+                ret = e.getId();
+            }
+        }
+        return ret + 1;
+    }
 }
