@@ -125,6 +125,15 @@ public class Evento {
 
     }
 
+    public static Evento buscarById(long id) {
+        for (Evento a : Utilidades.EVENTOS) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Evento{" + "id=" + id + ", nombre=" + nombre + ", fechaHora=" + fechaHora + '}';
