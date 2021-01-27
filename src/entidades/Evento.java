@@ -82,6 +82,15 @@ public class Evento {
         this.fechaHora = fechaHora;
     }
 
+    public static Evento buscarById(long id) {
+        for (Evento e : Utilidades.EVENTOS) {
+            if (e.getId() == id) {
+                return e;
+            }
+        }
+        return null;
+    }
+
     public static Evento nuevoEvento() {
         Evento event = new Evento();
         Scanner set = new Scanner(System.in);
@@ -125,10 +134,31 @@ public class Evento {
 
     }
 
-    public static Evento buscarById(long id) {
-        for (Evento a : Utilidades.EVENTOS) {
-            if (a.getId() == id) {
-                return a;
+    public static Evento buscarEventoByNombre(String nombreEvento, ArrayList<Evento> eventos) {
+        Evento ret = null;
+        for (Evento e : eventos) {
+            if (e.getNombre() == nombreEvento) {
+                ret = e;
+            }
+        }
+        return null;
+    }
+
+    public static Evento buscarEventoById(long idEvento, ArrayList<Evento> eventos) {
+        Evento ret = null;
+        for (Evento e : eventos) {
+            if (e.getId() == idEvento) {
+                ret = e;
+            }
+        }
+        return null;
+    }
+
+    public static Evento buscarEventoByFechaHora(Date fechaHoraEvento, ArrayList<Evento> eventos) {
+        Evento ret = null;
+        for (Evento e : eventos) {
+            if (e.getFechaHora() == fechaHoraEvento) {
+                ret = e;
             }
         }
         return null;
@@ -139,3 +169,82 @@ public class Evento {
         return "Evento{" + "id=" + id + ", nombre=" + nombre + ", fechaHora=" + fechaHora + '}';
     }
 }
+
+/**
+ *
+ * }
+ *
+ *
+ 
+    public static void buscarEventos(ArrayList<Evento> eventos) {
+        Evento buscado;
+        ArrayList<Evento> encontrados;
+        Scanner in;
+        int opcion = -1;
+
+        do {
+            buscado = null;
+            encontrados = new ArrayList<Evento>();
+            in = new Scanner(System.in);
+            System.out.println("Pulse 1 para buscar evento por ID.");
+            System.out.println("Pulse 2 para buscar evento por NOMBRE.");
+            System.out.println("Pulse 4 para buscar evento por FechaHora .");
+            System.out.println("Pulse 0 para VOLVER.");
+            opcion = in.nextInt();
+            if (opcion < 0 || opcion > 4) {
+                System.out.println("Opción incorrecta.");
+                continue;
+            }
+            in = new Scanner(System.in);
+            switch (opcion) {
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Introduzca el ID del evento a encontrar:");
+                    long idEven = in.nextLong();
+                    buscado = Evento.buscarEventoById(idEven, eventos);
+                    if (buscado != null) {
+                        System.out.print("Evento encontrado: ");
+                        System.out.println(buscado.getId() + ". " + buscado.getNombre() + ". " + buscado.getFechaHora());
+                    } else {
+                        System.out.println("Eveto con id=" + idEven + " NO ENCONTRADO.");
+                    }
+                    break;
+                case 2:
+                    System.out.println("Introduzca el NOMBRE del evento a encontrar:");
+                    String nomEven = in.nextLine();
+                    encontrados = Evento.buscarEventoByNombre(nomEven, eventos);
+                    
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Evento e : encontrados) {
+                            System.out.println(e.getId() + ". " + e.getNombre() + ". " + e.fechaHora);
+                        }
+                    } else {
+                        System.out.println("Empleado con nombre=" + nomEven + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+                case 4:
+                    System.out.println("Introduzca el EMAIL del empleado a encontrar:");
+                    SDate fechaHora = in.nextLine();
+                    encontrados = Evento.buscarByFechaHora(fechaHora)
+                    );
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Evento e : encontrados) {
+                            System.out.println(e.getId() + ". " + e.getNombre() + " (" + e.getEmail() + ")(" + e.getTelefono() + ")-->" + e.getClass().getSimpleName());
+                        }
+                    } else {
+                        System.out.println("Empleado con email=" + emailEmp + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                default:
+                    break;
+            }
+        } while (opcion != 0);
+
+    }
+ */
