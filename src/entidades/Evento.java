@@ -21,6 +21,7 @@ public class Evento {
      * no puede ser Duplicada valor valor por defecto: 0
      */
     protected long id;
+    private ArrayList<Evento> eventos = new ArrayList<Evento>(); // relación socio y evento
 
     /**
      * attributo nombre tipo de dato: String los valores validos: mayor de dos
@@ -189,7 +190,7 @@ public class Evento {
 
     }
 
-public static Evento buscarEventoByNombre(String nombreEvento, ArrayList<Evento> eventos) {
+    public static Evento buscarEventoByNombre(String nombreEvento, ArrayList<Evento> eventos) {
         Evento ret = null;
         for (Evento e : eventos) {
             if (e.getNombre() == nombreEvento) {
@@ -219,8 +220,28 @@ public static Evento buscarEventoByNombre(String nombreEvento, ArrayList<Evento>
         return null;
     }
 
+    public static void participarEvento() {
+        Scanner in;
+        int opcion = -1;
+        do {
+            in = new Scanner(System.in, "ISO-8859-1");
+            System.out.println("Pulse 1 para participar a un Evento.");
+            System.out.println("Pulse 0 para VOLVER.");
+            opcion = in.nextInt();
+            if (opcion == 1) {
+                System.out.println("Participar en el Evento.");
+
+            }
+            if (opcion == 0) {
+                System.out.println("Volver al menu principal.");
+
+            }
+        } while (opcion != 0 && opcion != 1);
+    }
+
     @Override
-        public String toString() {
+
+    public String toString() {
         return "Evento{" + "id=" + id + ", nombre=" + nombre + ", fechaHora=" + fechaHora + '}';
     }
 }
