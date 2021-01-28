@@ -155,7 +155,7 @@ public class Socio {
         soc.setApellidos(in.nextLine());
         System.out.println("Introduzca el dni del nuevo socio: ");
         soc.setDni(in.nextLine());
-        System.out.println("Introduzca el teléfonoo del nuevo socio: ");
+        System.out.println("Introduzca el teléfono del nuevo socio: ");
         soc.setTelefono(in.nextLine());
         System.out.println("Introduzca la dirección del nuevo socio: ");
         soc.setDireccion(in.nextLine());
@@ -172,6 +172,8 @@ public class Socio {
        
        
 
+    
+
     public static void buscarSocio(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> encontrados;
@@ -186,29 +188,43 @@ public class Socio {
             System.out.println("Pulse 2 para buscar socio por NOMBRE.");
             System.out.println("Pulse 3 para buscar socio por TELEFONO.");
             System.out.println("Pulse 0 para VOLVER.");
-            
+
             opcion = in.nextInt();
-            
-            if(opcion < 0 || opcion > 4) {
-                
+
+            if (opcion < 0 || opcion > 4) {
+
                 System.out.println("Opción incorrecta");
                 continue;
-                
+
             }
             in = new Scanner(System.in, "ISO-8859-1");
             switch (opcion) {
                 case 1:
                     System.out.println("Por favor introduzca el ID del socio que desea buscar: ");
                     int idSoc = in.nextInt();
-                    buscado = Socio.
+                    buscado = Socio.buscarSocioPorId(idSoc, socios);
+                    if (buscado != null) {
+
+                        System.out.println("Socio encontrado: ");
+                        System.out.println(buscado.getId() + ": " + buscado.getNombre() + " " + buscado.getApellidos() + " (" + buscado.getTelefono() + ") ");
+
+                    } else {
+                        System.out.println("El socio con el id " + idSoc + "no se encuentra en el sistema.");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Por favor introduzca el nombre del socio que desea buscar: ");
+                    String nomSoc = in.nextLine();
+                    buscado = Socio
             }
-        
-        
-        
+
         }
            
-        }
-        public static Socio buscarSocioPorId(int idSocio, ArrayList<Socio> socios) {
+        
+    }
+
+    public static Socio buscarSocioPorId(int idSocio, ArrayList<Socio> socios) {
         Socio ret = null;
         for (Socio s : socios) {
             if (s.getId() == idSocio) {
@@ -217,7 +233,16 @@ public class Socio {
             }
         }
         return ret;
-       
+
+    }
+    
+    public static Socio buscarSocioPorNombre(String nomSocio, ArrayList<Socio> socios) {
+        ArrayList <Socio> ret = new ArrayList <Socio>();
+        for (Socio s : socios) {
+            if (Utilidades.removeDiacriticalMarks(s.getNombre().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(nomSocio.toLowerCase()))) {
+                
+            }
+        }
     }
 
 }
