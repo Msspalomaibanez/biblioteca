@@ -5,6 +5,7 @@
  */
 package entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class Prestamo {
     private String fecha_devolucion;
     private String devolucion;
     private Estado estado;
-    
+    private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
 
     public Prestamo() {
     }

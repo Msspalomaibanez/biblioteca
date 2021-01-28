@@ -17,7 +17,7 @@ public class Proveedor {
     private int id;
     private String nombre;
     private String telefono;
-    private ArrayList<Lote> lotes;
+    private ArrayList<Lote> lotes = new ArrayList<Lote>();
 
     public Proveedor() {
     }
