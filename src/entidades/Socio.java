@@ -174,6 +174,10 @@ public class Socio {
 
     
 
+    
+
+    
+
     public static void buscarSocio(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> encontrados;
@@ -216,12 +220,15 @@ public class Socio {
                 case 2:
                     System.out.println("Por favor introduzca el nombre del socio que desea buscar: ");
                     String nomSoc = in.nextLine();
-                    buscado = Socio
+                    buscado = Socio.buscarSocioPorNombre(nomSoc, socios);
+
             }
 
         }
            
         
+    
+    
     }
 
     public static Socio buscarSocioPorId(int idSocio, ArrayList<Socio> socios) {
@@ -235,20 +242,25 @@ public class Socio {
         return ret;
 
     }
-    
-    public static Socio buscarSocioPorNombre(String nomSocio, ArrayList<Socio> socios) {
-        ArrayList <Socio> ret = new ArrayList <Socio>();
+
+    public static ArrayList<Socio> buscarSocioPorNombre(String nomSocio, ArrayList<Socio> socios) {
+        ArrayList<Socio> ret = new ArrayList<Socio>();
         for (Socio s : socios) {
             if (Utilidades.removeDiacriticalMarks(s.getNombre().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(nomSocio.toLowerCase()))) {
-                
+                ret.add(s);
             }
+            if (s.getNombre().toLowerCase().contains(nomSocio.toLowerCase())) {
+                if (!ret.contains(s)) {
+                    ret.add(s);
+                }
+            }
+
         }
+        return ret;
     }
 
-}
-
-@Override
-        public String toString() {
+    @Override
+    public String toString() {
         return "Socio{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + ", direccion=" + direccion + ", penalizacion=" + penalizacion + ", eventos=" + eventos + ", prestamos=" + prestamos + '}';
     }
 
