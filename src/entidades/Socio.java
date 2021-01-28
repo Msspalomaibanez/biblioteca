@@ -178,15 +178,17 @@ public class Socio {
 
     
 
+    
+
     public static void buscarSocio(ArrayList<Socio> socios) {
         Socio buscado;
-        ArrayList<Socio> encontrados;
+        ArrayList<Socio> buscado1;
         Scanner in;
         int opcion = -1;
 
         do {
             buscado = null;
-            encontrados = new ArrayList<Socio>();
+            buscado1 = new ArrayList<Socio>();
             in = new Scanner(System.in, "ISO-8859-1");
             System.out.println("Pulse 1 para buscar socio por ID.");
             System.out.println("Pulse 2 para buscar socio por NOMBRE.");
@@ -203,30 +205,50 @@ public class Socio {
             }
             in = new Scanner(System.in, "ISO-8859-1");
             switch (opcion) {
+
                 case 1:
+
                     System.out.println("Por favor introduzca el ID del socio que desea buscar: ");
                     int idSoc = in.nextInt();
                     buscado = Socio.buscarSocioPorId(idSoc, socios);
+
                     if (buscado != null) {
 
                         System.out.println("Socio encontrado: ");
                         System.out.println(buscado.getId() + ": " + buscado.getNombre() + " " + buscado.getApellidos() + " (" + buscado.getTelefono() + ") ");
 
                     } else {
+
                         System.out.println("El socio con el id " + idSoc + "no se encuentra en el sistema.");
                     }
                     break;
 
                 case 2:
+
                     System.out.println("Por favor introduzca el nombre del socio que desea buscar: ");
                     String nomSoc = in.nextLine();
-                    buscado = Socio.buscarSocioPorNombre(nomSoc, socios);
+                    buscado1 = Socio.buscarSocioPorNombre(nomSoc, socios);
+
+                    if (buscado1.size() > 0) {
+
+                        System.out.println("Socio encontrado: ");
+
+                        for (Socio s : buscado1) {
+                            System.out.println(s.getId() + ": " + s.getNombre() + " " + s.getApellidos() + "( " + s.getTelefono() + ") ");
+
+                        }
+                    } else {
+                   
+                        System.out.println("El socio con el nombre " + nomSoc + "no se encuentra en el sistema.");
+
+                    }
 
             }
 
         }
            
         
+    
     
     
     }
