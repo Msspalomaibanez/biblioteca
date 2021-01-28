@@ -79,14 +79,14 @@ public class Elemento {
         }
         return ret + 1;
     }
-    
-    public static void verElemento (ArrayList<Elemento> elementos) {
+
+    public static void verElemento(ArrayList<Elemento> elementos) {
         System.out.println("El programa tiene almacenados los siguientes elementos: ");
         for (Elemento e : elementos) {
             System.out.println(e.getId() + ":" + e.getClass().getSimpleName());
         }
     }
-    
+
     public static void buscarElementos(ArrayList<Elemento> elementos) {
         Elemento buscado;
         ArrayList<Elemento> encontrados;
@@ -120,7 +120,7 @@ public class Elemento {
             }
         } while (opcion != 0);
     }
-    
+
     public static Elemento buscarElementoPorId(int idElemento, ArrayList<Elemento> elementos) {
         Elemento ret = null;
         for (Elemento e : elementos) {

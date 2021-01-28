@@ -6,6 +6,7 @@
 package entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -94,6 +95,16 @@ public class Estanteria {
 
     public void setElementos(ArrayList<Elemento> elementos) {
         this.elementos = elementos;
+    }
+    
+    public static Estanteria nuevaEstanteria() {
+        Estanteria est = new Estanteria();
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Introduce el código de la nueva estantería:");
+        est.setCodigo(in.nextLine().charAt(0));
+        
+        return est;
     }
 
 }
