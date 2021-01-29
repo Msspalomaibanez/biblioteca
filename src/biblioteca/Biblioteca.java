@@ -68,9 +68,43 @@ public class Biblioteca {
                     break;
 
                 case 2: // se ha pulsado la opcion Gestion de Elementos
+                    System.out.println("\n Se ha pulsado la Gestión de Elementos");
+
+                    do {
+
+                        mostrarMenuElementos();
+                        in = new Scanner(System.in, "ISO-8859-1");
+                        opcion2 = in.nextInt();
+
+                        if (opcion2 < 0 || opcion2 > 4) {
+                            System.out.println("Opción incorrecta");
+                            continue;
+                        }
+
+                        gestionElementos(opcion2, elementos);
+
+                    } while (opcion2 != 0);
+
                     break;
 
                 case 3: // se ha pulsado la opcion Gestion de Eventos
+                    System.out.println("\n Se ha pulsado la Gestión de Eventos");
+
+                    do {
+
+                        mostrarMenuEvento();
+                        in = new Scanner(System.in, "ISO-8859-1");
+                        opcion2 = in.nextInt();
+
+                        if (opcion2 < 0 || opcion2 > 4) {
+                            System.out.println("Opción incorrecta");
+                            continue;
+                        }
+
+                        gestionEventos(opcion2, eventos);
+
+                    } while (opcion2 != 0);
+
                     break;
 
                 case 0: // se ha pulsado salir
@@ -159,6 +193,83 @@ public class Biblioteca {
             case 2:
 
                 System.out.println("Ha pulsado crear un nuevo Socio");
+
+        }
+
+    }
+
+    private static void gestionElementos(int opcion1, ArrayList<Elemento> elementos) {
+
+        Scanner in;
+        int idElemento;
+        Elemento e;
+
+        switch (opcion1) {
+
+            case 1:
+
+                System.out.println("Ha pulsado ver la lista de los Elementos");
+                Elemento.verElemento(elementos);
+
+                System.out.println("Por favor introduzca el id del elemento o pulse 0 para volver: ");
+                in = new Scanner(System.in, "ISO-8859-1");
+                idElemento = in.nextInt();
+
+                if (idElemento != 0) {
+                    e = Elemento.buscarElementoPorId(idElemento, elementos);
+
+                    if (e != null) {
+                        e.verDatosElementoCompleto();
+                    } else {
+
+                        System.out.println("El elemento con el id " + idElemento + "no se encuentra en el sistema");
+                    }
+
+                }
+                break;
+
+            case 2:
+
+                System.out.println("Ha pulsado crear un nuevo Elemento");
+
+        }
+
+    }
+
+    private static void gestionEventos(int opcion3, ArrayList<Evento> eventos) {
+
+        Scanner in;
+        long idEvento;
+        Evento ev;
+
+        switch (opcion3) {
+
+            case 1:
+
+                System.out.println("Ha pulsado ver la lista de los Eventos");
+                Evento.verEvento(eventos);
+
+                System.out.println("Por favor introduzca el id del evento o pulse 0 para volver: ");
+                in = new Scanner(System.in, "ISO-8859-1");
+                idEvento = in.nextLong();
+
+                if (idEvento != 0) {
+                    ev = Evento.buscarEventoById(idEvento, eventos);
+                    if (ev != null) {
+
+                        ev.verDatosEventoCompleto();
+
+                    } else {
+
+                        System.out.println("El evento con el id " + idEvento + "no se encuentra en el sistema");
+                    }
+
+                }
+                break;
+
+            case 2:
+
+                System.out.println("Ha pulsado crear un nuevo Evento");
 
         }
 
