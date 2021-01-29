@@ -367,9 +367,16 @@ public class Socio {
         
         
         
-    @Override
-    public String toString() {
-        return "Socio{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + ", direccion=" + direccion + ", penalizacion=" + penalizacion + ", eventos=" + eventos + ", prestamos=" + prestamos + '}';
-    }
-
+public void verDatosSocioCompleto() {
+    System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+    
+    System.out.println("DATOS DE SOCIO CON ID " + this.getId());
+    System.out.println("DNI: " + this.getDni());
+    System.out.println("Nombre: " + this.getNombre());
+    System.out.println("Apellidos: " + this.getApellidos());
+    System.out.println("Teléfono: " + this.getTelefono());
+    System.out.println("Dirección: " + this.getDireccion());
+    
+    System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+}
 }
