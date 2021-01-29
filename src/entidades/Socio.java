@@ -181,6 +181,7 @@ public class Socio {
         return soc;
     }
 
+    
     public static int nextIdSocio() {
         int ret = 0;
         for (Socio s : Utilidades.SOCIOS) {
@@ -206,6 +207,7 @@ public class Socio {
          * System.out.println(Utilidades.SOCIOS[x]); } }*
          */
   
+        
     public static void buscarSocios(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> buscado1;
@@ -346,6 +348,25 @@ public class Socio {
         return ret;
     }
 
+    
+    /**
+     * Se trata de una función que convierte un arra de objetos tipo Socio
+     * en un ArrayList de objetos de tipo Socio con los mismos elementos del 
+     * array
+     * @param array de Socios
+     * @return ArrayList de Socios
+     */
+    
+        public static final ArrayList<Socio> convertir(Socio[] array) {
+        ArrayList<Socio> ret = new ArrayList<Socio>();
+        for (Socio s : array) {
+            ret.add((Socio) s);
+        }
+        return ret;
+    }
+        
+        
+        
     @Override
     public String toString() {
         return "Socio{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + ", direccion=" + direccion + ", penalizacion=" + penalizacion + ", eventos=" + eventos + ", prestamos=" + prestamos + '}';
