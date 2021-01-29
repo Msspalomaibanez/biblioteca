@@ -132,7 +132,7 @@ public class Elemento {
         return ret;
     }
     
-      /**
+    /**
      * Se trata de una función que convierte un arra de objetos tipo Elemento
      * en un ArrayList de objetos de tipo Elementos con los mismos elementos del 
      * array
@@ -147,6 +147,6 @@ public class Elemento {
         }
         return ret;
     }
-        
+          
         
 }
