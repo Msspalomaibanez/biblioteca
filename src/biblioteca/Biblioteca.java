@@ -120,6 +120,8 @@ public class Biblioteca {
 
         } while (opcion1 < 0 || opcion1 > 3);
 
+        
+        System.out.println("FIN");
     }
 
     private static void mostrarMenuPrincipal() {
