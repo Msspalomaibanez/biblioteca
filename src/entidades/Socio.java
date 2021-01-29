@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Socio {
 
-    private long id;
+    private int id;
     private String nombre;
     private String apellidos;
     private String dni;
@@ -29,7 +29,7 @@ public class Socio {
     }
 
     /*constructor con todos los atributos*/
-    public Socio(long id, String nombre, String apellidos, String dni, String telefono, String direccion, boolean penalizacion, ArrayList<Prestamo> prestamos, ArrayList<Evento> eventos) {
+    public Socio(int id, String nombre, String apellidos, String dni, String telefono, String direccion, boolean penalizacion, ArrayList<Prestamo> prestamos, ArrayList<Evento> eventos) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -55,7 +55,7 @@ public class Socio {
     }
 
     /*constructor con los atributos más importantes*/
-    public Socio(long id, String nombre, String apellidos, String dni, String telefono, String direccion) {
+    public Socio(int id, String nombre, String apellidos, String dni, String telefono, String direccion) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -69,7 +69,7 @@ public class Socio {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -147,31 +147,66 @@ public class Socio {
 
     public static Socio nuevoSocio() {
         Socio soc = new Socio();
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in, "ISO-8859-1");
 
+        //Primero autogeneraremos el id del socio
+        int id = Socio.nextIdSocio();
+        soc.setId(id);
+        
         System.out.println("Introduzca el nombre del nuevo socio: ");
-        soc.setNombre(in.nextLine());
+        in = new Scanner (System.in, "ISO-8859-1");
+        String nombre = in.nextLine();
+        soc.setNombre(nombre);
+        
         System.out.println("Introduzca el apellido del nuevo socio: ");
-        soc.setApellidos(in.nextLine());
+        in = new Scanner (System.in, "ISO-8859-1");
+        String apellido = in.nextLine();
+        soc.setApellidos(apellido);
+        
         System.out.println("Introduzca el dni del nuevo socio: ");
-        soc.setDni(in.nextLine());
+       in = new Scanner (System.in, "ISO-8859-1");
+       String dni = in.nextLine();
+        soc.setDni(dni);
+       
         System.out.println("Introduzca el teléfono del nuevo socio: ");
-        soc.setTelefono(in.nextLine());
+        in = new Scanner (System.in, "ISO-8859-1");
+        String telefono = in.nextLine();
+        soc.setTelefono(telefono);
+        
         System.out.println("Introduzca la dirección del nuevo socio: ");
-        soc.setDireccion(in.nextLine());
+       in = new Scanner (System.in, "ISO-8859-1");
+       String direccion = in.nextLine();
+        soc.setDireccion(direccion);
 
         return soc;
     }
+
+    public static int nextIdSocio() {
+        int ret = 0;
+        for (Socio s : Utilidades.SOCIOS) {
+            if (s.getId() > ret) {
+                ret = (int) s.getId();
+            }
+        }
+    
+        return ret + 1;
+    }
+    
+    
+    
 
     public static void verSocio(ArrayList<Socio> socios) {
         System.out.println("El programa tiene almacenados los siguientes socios: ");
         for (Socio s : socios) {
             System.out.println(s.getId() + ": " + s.getNombre() + " " + s.getApellidos());
         }
-       
-       
+        /**
+         * public static void verSocio() { System.out.println("Listado de
+         * socios: "); for (int x = 0; x < Utilidades.numSocios;x++) {
+         * System.out.println(Utilidades.SOCIOS[x]); } }*
+         */
   
-    public static void buscarSocio(ArrayList<Socio> socios) {
+    public static void buscarSocios(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> buscado1;
         Scanner in;
@@ -229,38 +264,42 @@ public class Socio {
 
                         }
                     } else {
-                   
+
                         System.out.println("El socio con el nombre " + nomSoc + "no se encuentra en el sistema.");
 
                     }
                     break;
-                    
+
                 case 3:
-                    
+
                     System.out.println("Por favor introduzca el teléfono del socio que desea buscar: ");
                     String telSoc = in.nextLine();
                     buscado1 = Socio.buscarSocioPorTelefono(telSoc, socios);
-                    
+
                     if (buscado1.size() > 0) {
-                        
+
                         System.out.println("Socio encontrado: ");
-                        
+
                         for (Socio s : buscado1) {
                             System.out.println(s.getId() + ": " + s.getNombre() + " " + s.getApellidos() + "( " + s.getTelefono() + ") ");
-                            
-                        }
-                        
-                    } else {
-                        System.out.println("El socio con el teléfono");
-                    }
-             }
 
-        }
-           
-        
-    
-    
-    
+                        }
+
+                    } else {
+
+                        System.out.println("El socio con el teléfono " + telSoc + "no se encuentra en el sistema.");
+
+                    }
+                    break;
+
+                default:
+
+                    break;
+
+            }
+
+        } while (opcion != 0);
+
     }
 
     public static Socio buscarSocioPorId(int idSocio, ArrayList<Socio> socios) {
@@ -291,8 +330,7 @@ public class Socio {
         return ret;
     }
 
-    
-        public static ArrayList<Socio> buscarSocioPorTelefono(String telSocio, ArrayList<Socio> socios) {
+    public static ArrayList<Socio> buscarSocioPorTelefono(String telSocio, ArrayList<Socio> socios) {
         ArrayList<Socio> ret = new ArrayList<Socio>();
         for (Socio s : socios) {
             if (Utilidades.removeDiacriticalMarks(s.getNombre().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(telSocio.toLowerCase()))) {
@@ -307,8 +345,7 @@ public class Socio {
         }
         return ret;
     }
-        
-        
+
     @Override
     public String toString() {
         return "Socio{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + ", direccion=" + direccion + ", penalizacion=" + penalizacion + ", eventos=" + eventos + ", prestamos=" + prestamos + '}';
