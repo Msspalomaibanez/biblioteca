@@ -152,36 +152,35 @@ public class Socio {
         //Primero autogeneraremos el id del socio
         long id = Socio.nextIdSocio();
         soc.setId(id);
-        
+
         System.out.println("Introduzca el nombre del nuevo socio: ");
-        in = new Scanner (System.in, "ISO-8859-1");
+        in = new Scanner(System.in, "ISO-8859-1");
         String nombre = in.nextLine();
         soc.setNombre(nombre);
-        
+
         System.out.println("Introduzca el apellido del nuevo socio: ");
-        in = new Scanner (System.in, "ISO-8859-1");
+        in = new Scanner(System.in, "ISO-8859-1");
         String apellido = in.nextLine();
         soc.setApellidos(apellido);
-        
+
         System.out.println("Introduzca el dni del nuevo socio: ");
-       in = new Scanner (System.in, "ISO-8859-1");
-       String dni = in.nextLine();
+        in = new Scanner(System.in, "ISO-8859-1");
+        String dni = in.nextLine();
         soc.setDni(dni);
-       
+
         System.out.println("Introduzca el teléfono del nuevo socio: ");
-        in = new Scanner (System.in, "ISO-8859-1");
+        in = new Scanner(System.in, "ISO-8859-1");
         String telefono = in.nextLine();
         soc.setTelefono(telefono);
-        
+
         System.out.println("Introduzca la dirección del nuevo socio: ");
-       in = new Scanner (System.in, "ISO-8859-1");
-       String direccion = in.nextLine();
+        in = new Scanner(System.in, "ISO-8859-1");
+        String direccion = in.nextLine();
         soc.setDireccion(direccion);
 
         return soc;
     }
 
-    
     public static long nextIdSocio() {
         long ret = 0;
         for (Socio s : Utilidades.SOCIOS) {
@@ -189,25 +188,23 @@ public class Socio {
                 ret = (long) s.getId();
             }
         }
-    
+
         return ret + 1;
     }
-    
-    
-    
 
     public static void verSocio(ArrayList<Socio> socios) {
         System.out.println("El programa tiene almacenados los siguientes socios: ");
         for (Socio s : socios) {
             System.out.println(s.getId() + ": " + s.getNombre() + " " + s.getApellidos());
         }
-        /**
-         * public static void verSocio() { System.out.println("Listado de
-         * socios: "); for (int x = 0; x < Utilidades.numSocios;x++) {
-         * System.out.println(Utilidades.SOCIOS[x]); } }*
-         */
-  
-        
+    }
+
+    /**
+     * public static void verSocio() { System.out.println("Listado de socios:
+     * "); for (int x = 0; x < Utilidades.numSocios;x++) {
+     * System.out.println(Utilidades.SOCIOS[x]); } }*
+     */
+
     public static void buscarSocios(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> buscado1;
@@ -348,35 +345,31 @@ public class Socio {
         return ret;
     }
 
-    
     /**
-     * Se trata de una función que convierte un arra de objetos tipo Socio
-     * en un ArrayList de objetos de tipo Socio con los mismos elementos del 
-     * array
+     * Se trata de una función que convierte un arra de objetos tipo Socio en un
+     * ArrayList de objetos de tipo Socio con los mismos elementos del array
+     *
      * @param array de Socios
      * @return ArrayList de Socios
      */
-    
-        public static final ArrayList<Socio> convertir(Socio[] array) {
+    public static final ArrayList<Socio> convertir(Socio[] array) {
         ArrayList<Socio> ret = new ArrayList<Socio>();
         for (Socio s : array) {
             ret.add((Socio) s);
         }
         return ret;
     }
-        
-        
-        
-public void verDatosSocioCompleto() {
-    System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
-    
-    System.out.println("DATOS DE SOCIO CON ID " + this.getId());
-    System.out.println("DNI: " + this.getDni());
-    System.out.println("Nombre: " + this.getNombre());
-    System.out.println("Apellidos: " + this.getApellidos());
-    System.out.println("Teléfono: " + this.getTelefono());
-    System.out.println("Dirección: " + this.getDireccion());
-    
-    System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
-}
+
+    public void verDatosSocioCompleto() {
+        System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+
+        System.out.println("DATOS DE SOCIO CON ID " + this.getId());
+        System.out.println("DNI: " + this.getDni());
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Apellidos: " + this.getApellidos());
+        System.out.println("Teléfono: " + this.getTelefono());
+        System.out.println("Dirección: " + this.getDireccion());
+
+        System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+    }
 }
