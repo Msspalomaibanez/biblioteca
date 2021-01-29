@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Socio {
 
-    private int id;
+    private long id;
     private String nombre;
     private String apellidos;
     private String dni;
@@ -29,7 +29,7 @@ public class Socio {
     }
 
     /*constructor con todos los atributos*/
-    public Socio(int id, String nombre, String apellidos, String dni, String telefono, String direccion, boolean penalizacion, ArrayList<Prestamo> prestamos, ArrayList<Evento> eventos) {
+    public Socio(long id, String nombre, String apellidos, String dni, String telefono, String direccion, boolean penalizacion, ArrayList<Prestamo> prestamos, ArrayList<Evento> eventos) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -55,7 +55,7 @@ public class Socio {
     }
 
     /*constructor con los atributos más importantes*/
-    public Socio(int id, String nombre, String apellidos, String dni, String telefono, String direccion) {
+    public Socio(long id, String nombre, String apellidos, String dni, String telefono, String direccion) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -69,7 +69,7 @@ public class Socio {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -150,7 +150,7 @@ public class Socio {
         Scanner in = new Scanner(System.in, "ISO-8859-1");
 
         //Primero autogeneraremos el id del socio
-        int id = Socio.nextIdSocio();
+        long id = Socio.nextIdSocio();
         soc.setId(id);
         
         System.out.println("Introduzca el nombre del nuevo socio: ");
@@ -182,11 +182,11 @@ public class Socio {
     }
 
     
-    public static int nextIdSocio() {
-        int ret = 0;
+    public static long nextIdSocio() {
+        long ret = 0;
         for (Socio s : Utilidades.SOCIOS) {
             if (s.getId() > ret) {
-                ret = (int) s.getId();
+                ret = (long) s.getId();
             }
         }
     
