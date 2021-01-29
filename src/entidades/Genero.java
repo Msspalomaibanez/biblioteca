@@ -5,6 +5,7 @@
  */
 package entidades;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -55,4 +56,22 @@ public class Genero {
         return gnr;
     }
 
+    
+      /**
+     * Se trata de una función que convierte un arra de objetos tipo Genero
+     * en un ArrayList de objetos de tipo Genero con los mismos elementos del 
+     * array
+     * @param array de Generos
+     * @return ArrayList de Generos
+     */
+    
+        public static final ArrayList<Genero> convertir(Genero[] array) {
+        ArrayList<Genero> ret = new ArrayList<Genero>();
+        for (Genero g : array) {
+            ret.add((Genero) g);
+        }
+        return ret;
+    }
+        
+        
 }
