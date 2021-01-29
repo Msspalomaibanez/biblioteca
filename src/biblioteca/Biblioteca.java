@@ -22,12 +22,8 @@ public class Biblioteca {
         // Lo primero que haremos será cargar todos nuestros datos desde los arrays de la clase Utilidades
 
         ArrayList<Socio> socios = Socio.convertir(Utilidades.SOCIOS);
-        ArrayList<Prestamo> prestamos = Prestamo.convertir(Utilidades.PRESTAMOS);
-        ArrayList<Estado> estados = Estado.convertir(Utilidades.ESTADOS);
-        ArrayList<Penalizacion> penalizaiones = Penalizacion.convertir(Utilidades.PENALIZACIONES);
-        ArrayList<Proveedor> proveedores = Proveedor.convertir(Utilidades.PROVEEDORES);
-        ArrayList<Genero> generos = Genero.convertir(Utilidades.GENEROS);
         ArrayList<Elemento> elementos = Elemento.convertir(Utilidades.ELEMENTOS);
+        ArrayList<Evento> eventos = Evento.convertir(Utilidades.EVENTOS);
 
         /**
          * MENÚ
@@ -159,9 +155,9 @@ public class Biblioteca {
 
                 }
                 break;
-                
+
             case 2:
-                
+
                 System.out.println("Ha pulsado crear un nuevo Socio");
 
         }
