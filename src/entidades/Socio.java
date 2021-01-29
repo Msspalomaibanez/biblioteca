@@ -304,7 +304,7 @@ public class Socio {
 
     }
 
-    public static Socio buscarSocioPorId(int idSocio, ArrayList<Socio> socios) {
+    public static Socio buscarSocioPorId(long idSocio, ArrayList<Socio> socios) {
         Socio ret = null;
         for (Socio s : socios) {
             if (s.getId() == idSocio) {
