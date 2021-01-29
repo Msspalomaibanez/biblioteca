@@ -5,6 +5,7 @@
  */
 package entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -72,6 +73,24 @@ public class Penalizacion {
         
     }
     
+    
+    
+      /**
+     * Se trata de una función que convierte un arra de objetos tipo Penalizacion
+     * en un ArrayList de objetos de tipo Penalizacion con los mismos elementos del 
+     * array
+     * @param array de Penalizaciones
+     * @return ArrayList de Penalizaciones
+     */
+    
+        public static final ArrayList<Penalizacion> convertir(Penalizacion[] array) {
+        ArrayList<Penalizacion> ret = new ArrayList<Penalizacion>();
+        for (Penalizacion p : array) {
+            ret.add((Penalizacion) p);
+        }
+        return ret;
+    }
+        
     
     @Override
     public String toString() {
