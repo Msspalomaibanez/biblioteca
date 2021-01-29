@@ -173,6 +173,18 @@ public class Biblioteca {
                 System.out.println("Ha pulsado ver la lista de los Socios");
                 Socio.verSocio(socios);
 
+                break;
+
+            case 2:
+
+                System.out.println("Ha pulsado crear un nuevo Socio");
+
+                Socio nuevoSocio = Socio.nuevoSocio();
+                socios.add(nuevoSocio);
+
+                System.out.println("Socio con nombre " + nuevoSocio.getNombre() + " " + nuevoSocio.getApellidos() + " insertado correctamente.");
+
+            case 3:
                 System.out.println("Por favor introduzca el id del socio o pulse 0 para volver: ");
                 in = new Scanner(System.in, "ISO-8859-1");
                 idSocio = in.nextLong();
@@ -191,11 +203,6 @@ public class Biblioteca {
 
                 }
                 break;
-
-            case 2:
-
-                System.out.println("Ha pulsado crear un nuevo Socio");
-
         }
 
     }
