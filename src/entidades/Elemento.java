@@ -131,4 +131,22 @@ public class Elemento {
         }
         return ret;
     }
+    
+      /**
+     * Se trata de una función que convierte un arra de objetos tipo Elemento
+     * en un ArrayList de objetos de tipo Elementos con los mismos elementos del 
+     * array
+     * @param array de Elementos
+     * @return ArrayList de Elementos
+     */
+    
+        public static final ArrayList<Elemento> convertir(Elemento[] array) {
+        ArrayList<Elemento> ret = new ArrayList<Elemento>();
+        for (Elemento e : array) {
+            ret.add((Elemento) e);
+        }
+        return ret;
+    }
+        
+        
 }
