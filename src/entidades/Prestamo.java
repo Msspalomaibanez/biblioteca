@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author USER
  */
 public class Prestamo {
-    
+
     private long id;
     private String fecha_inicio;
     private String fecha_devolucion;
@@ -32,8 +32,8 @@ public class Prestamo {
         this.devolucion = devolucion;
         this.estado = estado;
     }
-    
-        public Prestamo(Prestamo pres) {
+
+    public Prestamo(Prestamo pres) {
         this.id = pres.id;
         this.fecha_inicio = pres.fecha_inicio;
         this.fecha_devolucion = pres.fecha_devolucion;
@@ -86,32 +86,41 @@ public class Prestamo {
     public void setDevolucion(String devolucion) {
         this.devolucion = devolucion;
     }
-    
-    
 
-    
-        public static Prestamo nuevoPrestamo (){
+    public static Prestamo nuevoPrestamo() {
         Prestamo pres = new Prestamo();
-        Scanner in = new Scanner (System.in);
-        
+        Scanner in = new Scanner(System.in);
+
         System.out.println("Introduzca la fecha de inicio del préstamo (dd/mm/YYYY): ");
         pres.setFecha_inicio(in.nextLine());
-        
+
         System.out.println("Introduzca la fecha de devolución del prestamo (dd/mm/YYYY): ");
         pres.setFecha_devolucion(in.nextLine());
-        
+
         Estado estado = Estado.nuevoEstado();
         pres.setEstado(estado);
-        
+
         return pres;
+    }
+
+    /**
+     * Se trata de una función que convierte un arra de objetos tipo Prestamo en un
+     * ArrayList de objetos de tipo Prestamo con los mismos elementos del array
+     *
+     * @param array de Prestamos
+     * @return ArrayList de Prestamos
+     */
+    public static final ArrayList<Prestamo> convertir(Prestamo[] array) {
+        ArrayList<Prestamo> ret = new ArrayList<Prestamo>();
+        for (Prestamo p : array) {
+            ret.add((Prestamo) p);
+        }
+        return ret;
     }
 
     @Override
     public String toString() {
         return "Prestamo{" + "id=" + id + ", fecha_inicio=" + fecha_inicio + ", fecha_devolucion=" + fecha_devolucion + ", devolucion=" + devolucion + ", estado=" + estado + '}';
     }
-    
-    
-    
-    
+
 }
