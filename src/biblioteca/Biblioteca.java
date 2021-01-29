@@ -19,8 +19,23 @@ public class Biblioteca {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Lo primero que haremos será cargar todos nuestros datos desde los arrays de la clase Utilidades
 
+        ArrayList<Socio> socios = Socio.convertir(Utilidades.SOCIOS);
+        ArrayList<Prestamo> prestamos = Prestamo.convertir(Utilidades.PRESTAMOS);
+        ArrayList<Estado> estados = Estado.convertir(Utilidades.ESTADOS);
+        ArrayList<Penalizacion> penalizaiones = Penalizacion.convertir(Utilidades.PENALIZACIONES);
+        ArrayList<Proveedor> proveedores = Proveedor.convertir(Utilidades.PROVEEDORES);
+        ArrayList<Genero> generos = Genero.convertir(Utilidades.GENEROS);
+        ArrayList<Elemento> elementos = Elemento.convertir(Utilidades.ELEMENTOS);
+        
+        
+        
+        
+        
+        
+        
+        
         /**
          * MENÚ
          *
