@@ -108,10 +108,12 @@ public class Biblioteca {
                     break;
 
                 case 0: // se ha pulsado salir
-                    continue;
+                    System.out.println("Ha pulsado Salir.");
+                    break;
 
                 default: // opcion incorrecta
 
+                    System.out.println("Opción incorrecta");
             }
 
             opcion1 = -1;
