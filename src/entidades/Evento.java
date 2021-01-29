@@ -239,6 +239,24 @@ public class Evento {
         } while (opcion != 0 && opcion != 1);
     }
 
+    
+     /**
+     * Se trata de una función que convierte un arra de objetos tipo Evento
+     * en un ArrayList de objetos de tipo Evento con los mismos elementos del 
+     * array
+     * @param array de Eventos
+     * @return ArrayList de Eventos
+     */
+    
+        public static final ArrayList<Evento> convertir(Evento[] array) {
+        ArrayList<Evento> ret = new ArrayList<Evento>();
+        for (Evento e : array) {
+            ret.add((Evento) e);
+        }
+        return ret;
+    }
+        
+        
     @Override
 
     public String toString() {
