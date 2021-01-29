@@ -28,14 +28,7 @@ public class Biblioteca {
         ArrayList<Proveedor> proveedores = Proveedor.convertir(Utilidades.PROVEEDORES);
         ArrayList<Genero> generos = Genero.convertir(Utilidades.GENEROS);
         ArrayList<Elemento> elementos = Elemento.convertir(Utilidades.ELEMENTOS);
-        
-        
-        
-        
-        
-        
-        
-        
+
         /**
          * MENÚ
          *
@@ -135,7 +128,48 @@ public class Biblioteca {
         System.out.println("Pulse 0 para salir");
     }
 
-    /**      *
+    private static void gestionSocios(int opcion1, ArrayList<Socio> socios) {
+
+        Scanner in;
+        long idSocio;
+        Socio s;
+
+        switch (opcion1) {
+
+            case 1:
+
+                System.out.println("Ha pulsado ver la lista de los Socios");
+                Socio.verSocio(socios);
+
+                System.out.println("Por favor introduzca el id del socio o pulse 0 para volver: ");
+                in = new Scanner(System.in, "ISO-8859-1");
+                idSocio = in.nextLong();
+
+                if (idSocio != 0) {
+                    s = Socio.buscarSocioPorId(idSocio, socios);
+
+                    if (s != null) {
+
+                        s.verDatosSocioCompleto();
+
+                    } else {
+
+                        System.out.println("El socio con el id " + idSocio + "no se encuentra en el sistema");
+                    }
+
+                }
+                break;
+                
+            case 2:
+                
+                System.out.println("Ha pulsado crear un nuevo Socio");
+
+        }
+
+    }
+
+    /**
+     * *
      * Socio socio1 = Socio.nuevoSocio(); Scanner in = new Scanner(System.in);
      * char opcion = '-';
      *
