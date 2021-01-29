@@ -34,9 +34,9 @@ public class Evento {
 
     /**
      * attributo: fechaHora tipo de dato: Date los valores validos: debe tener
-     * este formato yyyy/MM/dd los valores invalidos: no se admite cualquierotro
-     * formato. restricciones: debe dar formato definido yyyy/MM/dd valor por
-     * defecto: Null
+     * este formato yyyy/MM/dd los valores invalidos: no se admite cualquier
+     * otro formato. restricciones: debe dar formato definido yyyy/MM/dd valor
+     * por defecto: Null
      */
     protected Date fechaHora;
 
@@ -239,24 +239,30 @@ public class Evento {
         } while (opcion != 0 && opcion != 1);
     }
 
-    
-     /**
-     * Se trata de una función que convierte un arra de objetos tipo Evento
-     * en un ArrayList de objetos de tipo Evento con los mismos elementos del 
-     * array
+    /**
+     * Se trata de una función que convierte un arra de objetos tipo Evento en
+     * un ArrayList de objetos de tipo Evento con los mismos elementos del array
+     *
      * @param array de Eventos
      * @return ArrayList de Eventos
      */
-    
-        public static final ArrayList<Evento> convertir(Evento[] array) {
+    public static final ArrayList<Evento> convertir(Evento[] array) {
         ArrayList<Evento> ret = new ArrayList<Evento>();
         for (Evento e : array) {
             ret.add((Evento) e);
         }
         return ret;
     }
-        
-        
+
+    public void verDatosEventoCompleto() {
+        System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+        System.out.println("DATOS DE EVENTO CON ID " + this.getId());
+        System.out.println("ID: " + this.getId());
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("FechaHora: " + this.getFechaHora());
+        System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+    }
+
     @Override
 
     public String toString() {
