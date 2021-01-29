@@ -170,16 +170,7 @@ public class Socio {
         }
        
        
-       
-
-    
-
-    
-
-    
-
-    
-
+  
     public static void buscarSocio(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> buscado1;
@@ -242,8 +233,27 @@ public class Socio {
                         System.out.println("El socio con el nombre " + nomSoc + "no se encuentra en el sistema.");
 
                     }
-
-            }
+                    break;
+                    
+                case 3:
+                    
+                    System.out.println("Por favor introduzca el teléfono del socio que desea buscar: ");
+                    String telSoc = in.nextLine();
+                    buscado1 = Socio.buscarSocioPorTelefono(telSoc, socios);
+                    
+                    if (buscado1.size() > 0) {
+                        
+                        System.out.println("Socio encontrado: ");
+                        
+                        for (Socio s : buscado1) {
+                            System.out.println(s.getId() + ": " + s.getNombre() + " " + s.getApellidos() + "( " + s.getTelefono() + ") ");
+                            
+                        }
+                        
+                    } else {
+                        System.out.println("El socio con el teléfono");
+                    }
+             }
 
         }
            
@@ -281,6 +291,24 @@ public class Socio {
         return ret;
     }
 
+    
+        public static ArrayList<Socio> buscarSocioPorTelefono(String telSocio, ArrayList<Socio> socios) {
+        ArrayList<Socio> ret = new ArrayList<Socio>();
+        for (Socio s : socios) {
+            if (Utilidades.removeDiacriticalMarks(s.getNombre().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(telSocio.toLowerCase()))) {
+                ret.add(s);
+            }
+            if (s.getNombre().toLowerCase().contains(telSocio.toLowerCase())) {
+                if (!ret.contains(s)) {
+                    ret.add(s);
+                }
+            }
+
+        }
+        return ret;
+    }
+        
+        
     @Override
     public String toString() {
         return "Socio{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + ", direccion=" + direccion + ", penalizacion=" + penalizacion + ", eventos=" + eventos + ", prestamos=" + prestamos + '}';
