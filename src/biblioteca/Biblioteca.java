@@ -185,23 +185,11 @@ public class Biblioteca {
                 System.out.println("Socio con nombre " + nuevoSocio.getNombre() + " " + nuevoSocio.getApellidos() + " insertado correctamente.");
 
             case 3:
-                System.out.println("Por favor introduzca el id del socio o pulse 0 para volver: ");
-                in = new Scanner(System.in, "ISO-8859-1");
-                idSocio = in.nextLong();
-
-                if (idSocio != 0) {
-                    s = Socio.buscarSocioPorId(idSocio, socios);
-
-                    if (s != null) {
-
-                        s.verDatosSocioCompleto();
-
-                    } else {
-
-                        System.out.println("El socio con el id " + idSocio + "no se encuentra en el sistema");
-                    }
-
-                }
+                
+                System.out.println("Ha pulsado buscar un Socio");
+                
+                Socio.buscarSocios(socios);
+          
                 break;
         }
 
