@@ -86,4 +86,22 @@ public class Proveedor {
         return pro;
     }
 
+    
+      /**
+     * Se trata de una función que convierte un arra de objetos tipo Proveedor
+     * en un ArrayList de objetos de tipo Proveedor con los mismos elementos del 
+     * array
+     * @param array de Proveedores
+     * @return ArrayList de Proveedores
+     */
+    
+        public static final ArrayList<Proveedor> convertir(Proveedor[] array) {
+        ArrayList<Proveedor> ret = new ArrayList<Proveedor>();
+        for (Proveedor p : array) {
+            ret.add((Proveedor) p);
+        }
+        return ret;
+    }
+        
+        
 }
