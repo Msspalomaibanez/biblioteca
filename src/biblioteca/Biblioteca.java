@@ -120,7 +120,6 @@ public class Biblioteca {
 
         } while (opcion1 < 0 || opcion1 > 3);
 
-        
         System.out.println("FIN");
     }
 
@@ -187,11 +186,11 @@ public class Biblioteca {
                 System.out.println("Socio con nombre " + nuevoSocio.getNombre() + " " + nuevoSocio.getApellidos() + " insertado correctamente.");
 
             case 3:
-                
+
                 System.out.println("Ha pulsado buscar un Socio");
-                
+
                 Socio.buscarSocios(socios);
-          
+
                 break;
         }
 
@@ -230,7 +229,16 @@ public class Biblioteca {
             case 2:
 
                 System.out.println("Ha pulsado crear un nuevo Elemento");
-
+                Elemento nuevoElemento = Elemento.nuevoElemento();
+                elementos.add(nuevoElemento);
+                
+            case 3:
+                
+                System.out.println("Ha pulsado buscar un Elemento");
+                
+                Elemento.buscarElementos(elementos);
+                
+                break;
         }
 
     }
