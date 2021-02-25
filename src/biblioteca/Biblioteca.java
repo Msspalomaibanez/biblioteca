@@ -116,8 +116,6 @@ public class Biblioteca {
                     System.out.println("Opción incorrecta");
             }
 
-            opcion1 = -1;
-
         } while (opcion1 < 0 || opcion1 > 3);
 
         System.out.println("FIN");

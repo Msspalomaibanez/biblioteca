@@ -43,13 +43,17 @@ public class DVD extends Elemento {
     }
 
     public static DVD nuevoDVD() {
-        DVD dvd = new DVD();
-        Scanner in = new Scanner(System.in);
-        Genero genero = Genero.nuevoGenero();
-
+        Elemento e = Elemento.nuevoElemento();
+        Scanner in = new Scanner(System.in, "ISO-8859-1");
+        
         System.out.println("Introduce el título del nuevo DVD:");
-        dvd.setTitulo(in.nextLine());
-
+        in = new Scanner(System.in, "ISO-8859-1");
+        String tit = in.nextLine();
+        do{
+            
+        } while(tit.isEmpty() || tit.length() < 2 || tit.length() > 150);
+        
+        DVD dvd = new DVD(e, tit);
         return dvd;
     }
 
