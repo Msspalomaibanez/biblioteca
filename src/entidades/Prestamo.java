@@ -21,16 +21,18 @@ public class Prestamo {
     private String devolucion;
     private Estado estado;
     private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+    private int idSocio;
 
     public Prestamo() {
     }
 
-    public Prestamo(long id, String fecha_inicio, String fecha_devolucion, String devolucion, Estado estado) {
+    public Prestamo(long id, String fecha_inicio, String fecha_devolucion, String devolucion, Estado estado, int idSocio) {
         this.id = id;
         this.fecha_inicio = fecha_inicio;
         this.fecha_devolucion = fecha_devolucion;
         this.devolucion = devolucion;
         this.estado = estado;
+        this.idSocio = idSocio;
     }
 
     public Prestamo(Prestamo pres) {
@@ -39,12 +41,14 @@ public class Prestamo {
         this.fecha_devolucion = pres.fecha_devolucion;
         this.devolucion = pres.devolucion;
         this.estado = pres.estado;
+        this.idSocio = pres.idSocio;
     }
 
     public Prestamo(long id, String fecha_inicio, String fecha_devolucion) {
         this.id = id;
         this.fecha_inicio = fecha_inicio;
         this.fecha_devolucion = fecha_devolucion;
+        this.idSocio = idSocio;
     }
 
     public long getId() {
@@ -87,6 +91,23 @@ public class Prestamo {
         this.devolucion = devolucion;
     }
 
+    public ArrayList<Elemento> getElementos() {
+        return elementos;
+    }
+
+    public void setElementos(ArrayList<Elemento> elementos) {
+        this.elementos = elementos;
+    }
+
+    public int getIdSocio() {
+        return idSocio;
+    }
+
+    public void setIdSocio(int idSocio) {
+        this.idSocio = idSocio;
+    }
+
+    
     public static Prestamo nuevoPrestamo() {
         Prestamo pres = new Prestamo();
         Scanner in = new Scanner(System.in);
