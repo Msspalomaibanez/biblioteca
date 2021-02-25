@@ -52,6 +52,7 @@ public class DVD extends Elemento {
         if (tit.isEmpty() || tit.length() < 2 || tit.length() > 150) {
             do {
                 System.out.println("Has introducido un título no válido");
+                System.out.println("Introduce un valor válido.");
                 in = new Scanner(System.in, "ISO-8859-1");
                 tit = in.nextLine();
             } while (tit.isEmpty() || tit.length() < 2 || tit.length() > 150);

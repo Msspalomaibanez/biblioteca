@@ -79,18 +79,51 @@ public class Libro extends Elemento {
     }
 
     public static Libro nuevoLibro() {
-        Libro lbr = new Libro();
-        Scanner in = new Scanner(System.in);
+        Elemento e = new Elemento();
+        Scanner in = new Scanner(System.in,"ISO-8859-1");
+        
+        System.out.println("Introduce el nombre del nuevo libro.");
+        String nmb = in.nextLine();
+        if (nmb.isEmpty() || nmb.length() < 2 || nmb.length() > 150) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido.");
+                in = new Scanner(System.in, "ISO 8859-1");
+                nmb = in.nextLine();
+            } while (nmb.isEmpty() || nmb.length() < 2 || nmb.length() > 150);
+        }
+        System.out.println("Introduce la editorial del nuevo libro.");
+        String edt = in.nextLine();
+        if (edt.isEmpty() || edt.length() < 2 || edt.length() > 150) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido.");
+                in = new Scanner(System.in, "ISO 8859-1");
+                edt = in.nextLine();
+            } while (edt.isEmpty() || edt.length() < 2 || edt.length() > 150);
+        }
+        System.out.println("Introduce el autor del nuevo libro.");
+        String aut = in.nextLine();
+        if (aut.isEmpty() || aut.length() < 2 || aut.length() > 150) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido.");
+                in = new Scanner(System.in, "ISO 8859-1");
+                aut = in.nextLine();
+            } while (aut.isEmpty());
+        }
+        System.out.println("Introduce el número de páginas del nuevo libro");
+        String pag = in.nextLine();
+        if (pag.isEmpty()) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido.");
+                in = new Scanner(System.in, "ISO 8859-1");
+                pag = in.nextLine();
+            } while (pag.isEmpty());
+        }
 
-        System.out.println("Introduce el nombre del nuevo libro:");
-        lbr.setNombre(in.nextLine());
-        System.out.println("Introduce la editorial del nuevo libro:");
-        lbr.setEditorial(in.nextLine());
-        System.out.println("Introduce el autor del nuevo libro:");
-        lbr.setAutor(in.nextLine());
-        System.out.println("Introduce el número de páginas del nuevo libro:");
-        lbr.setPagina(in.nextLine());
-
+        Libro lbr = new Libro(e,nmb,edt,aut,pag);
         return lbr;
     }
 

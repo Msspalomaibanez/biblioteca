@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Elemento {
 
-    protected int id;
+    protected long id;
     protected Genero genero;
 
     public Elemento() {
@@ -54,19 +54,22 @@ public class Elemento {
         Elemento elm = new Elemento();
         Scanner in = new Scanner(System.in);
         long id = Elemento.nextIdElemento();
-        char opcion = '-';
-
-        Genero genero = Genero.nuevoGenero();
-
-        do {
-            System.out.println("Si quiere añadir un libro pulsa 'L' y si quiere añadir un nuevo DVD pulsa 'D'.");
-            opcion = in.nextLine().charAt(0);
-            if (opcion == 'L' || opcion == 'l') {
-                Libro libro = Libro.nuevoLibro();
-            } else if (opcion == 'D' || opcion == 'd') {
-                DVD dvd = DVD.nuevoDVD();
-            }
-        } while (opcion != 'L' && opcion != 'l' && opcion != 'D' && opcion != 'd');
+        Genero gen = Genero.nuevoGenero();
+        System.out.println("Si desea crear un libro pulsa 1 y si desea crear un DVD pulsa 2.");
+        int opcion = in.nextInt();
+        if (opcion != 1 || opcion != 2)
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Vuelve a introducir un valor válido.");
+                opcion = in.nextInt();
+            } while (opcion != 1 || opcion != 2);
+        if (opcion == 1) {
+            Libro nuevoLibro = Libro.nuevoLibro();
+        }
+        if (opcion == 2) {
+            DVD nuevoDvd = DVD.nuevoDVD();
+        }
+        
 
         return elm;
     }
