@@ -51,27 +51,32 @@ public class Genero {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Introduce el nombre del nuevo género:");
-        gnr.setNombre(in.nextLine());
+        String nom = in.nextLine();
+        if (nom.isEmpty() || nom.length() < 2 || nom.length() > 150) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido");
+                in = new Scanner(System.in, "ISO 8859-1");
+                nom = in.nextLine();
+            } while (nom.isEmpty() || nom.length() < 2 || nom.length() > 150);
+        }
 
         return gnr;
     }
 
-    
-      /**
-     * Se trata de una función que convierte un arra de objetos tipo Genero
-     * en un ArrayList de objetos de tipo Genero con los mismos elementos del 
-     * array
+    /**
+     * Se trata de una función que convierte un arra de objetos tipo Genero en
+     * un ArrayList de objetos de tipo Genero con los mismos elementos del array
+     *
      * @param array de Generos
      * @return ArrayList de Generos
      */
-    
-        public static final ArrayList<Genero> convertir(Genero[] array) {
+    public static final ArrayList<Genero> convertir(Genero[] array) {
         ArrayList<Genero> ret = new ArrayList<Genero>();
         for (Genero g : array) {
             ret.add((Genero) g);
         }
         return ret;
     }
-        
-        
+
 }
