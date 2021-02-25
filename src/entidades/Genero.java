@@ -49,6 +49,7 @@ public class Genero {
     public static Genero nuevoGenero() {
         Genero gnr = new Genero();
         Scanner in = new Scanner(System.in);
+        long id = Genero.nextIdGenero();
 
         System.out.println("Introduce el nombre del nuevo género:");
         String nom = in.nextLine();
@@ -62,6 +63,16 @@ public class Genero {
         }
 
         return gnr;
+    }
+    
+    public static long nextIdGenero() {
+        long ret = 0;
+        for (Genero g : Utilidades.GENEROS) {
+            if (g.getId() > ret) {
+                ret = g.getId();
+            }
+        }
+        return ret + 1;
     }
 
     /**
