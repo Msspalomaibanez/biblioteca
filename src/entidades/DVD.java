@@ -45,16 +45,20 @@ public class DVD extends Elemento {
     public static DVD nuevoDVD() {
         Elemento e = Elemento.nuevoElemento();
         Scanner in = new Scanner(System.in, "ISO-8859-1");
-        
+
         System.out.println("Introduce el título del nuevo DVD:");
         in = new Scanner(System.in, "ISO-8859-1");
         String tit = in.nextLine();
-        do{
-            
-        } while(tit.isEmpty() || tit.length() < 2 || tit.length() > 150);
-        
+        if (tit.isEmpty() || tit.length() < 2 || tit.length() > 150) {
+            do {
+                System.out.println("Has introducido un título no válido");
+                in = new Scanner(System.in, "ISO-8859-1");
+                tit = in.nextLine();
+            } while (tit.isEmpty() || tit.length() < 2 || tit.length() > 150);
+        }
+
         DVD dvd = new DVD(e, tit);
         return dvd;
     }
-
+    
 }

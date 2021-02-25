@@ -53,6 +53,7 @@ public class Elemento {
     public static Elemento nuevoElemento() {
         Elemento elm = new Elemento();
         Scanner in = new Scanner(System.in);
+        long id = Elemento.nextIdElemento();
         char opcion = '-';
 
         Genero genero = Genero.nuevoGenero();
