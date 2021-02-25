@@ -180,7 +180,13 @@ public class Socio {
 
         return soc;
     }
-
+    
+/**
+ * Función que genera un id automático cada vez que se crea un nuevo socio y dicho
+ * id será el siguiente al último generado
+ * @return long
+ */
+    
     public static long nextIdSocio() {
         long ret = 0;
         for (Socio s : Utilidades.SOCIOS) {
@@ -191,6 +197,11 @@ public class Socio {
 
         return ret + 1;
     }
+    
+    /**
+     * Función que nos permite ver toda la lista de socios 
+     * @param socios 
+     */
 
     public static void verSocio(ArrayList<Socio> socios) {
         System.out.println("El programa tiene almacenados los siguientes socios: ");
@@ -205,6 +216,12 @@ public class Socio {
      * System.out.println(Utilidades.SOCIOS[x]); } }*
      */
 
+    /**
+     * Función que nos permite buscar un socio metiéndole por la entrada un parámetro de
+     * búsqueda, que podrá ser por el id, por el nombre o por el teléfono
+     * @param socios 
+     */
+    
     public static void buscarSocios(ArrayList<Socio> socios) {
         Socio buscado;
         ArrayList<Socio> buscado1;
@@ -300,6 +317,14 @@ public class Socio {
         } while (opcion != 0);
 
     }
+    
+    /**
+     * Función para buscar un socio metiendóle como parámetro de búsqueda el id
+     * del socio
+     * @param idSocio
+     * @param socios
+     * @return id
+     */
 
     public static Socio buscarSocioPorId(long idSocio, ArrayList<Socio> socios) {
         Socio ret = null;
@@ -313,6 +338,14 @@ public class Socio {
 
     }
 
+    /**
+     * Función para buscar un socio metiéndole como parámetro de búsqueda el nombre
+     * del socio
+     * @param nomSocio
+     * @param socios
+     * @return String
+     */
+    
     public static ArrayList<Socio> buscarSocioPorNombre(String nomSocio, ArrayList<Socio> socios) {
         ArrayList<Socio> ret = new ArrayList<Socio>();
         for (Socio s : socios) {
@@ -329,6 +362,14 @@ public class Socio {
         return ret;
     }
 
+    /**
+     * Función para buscar un socio metiéndole como parámetro de búsqueda el teléfono
+     * del socio
+     * @param telSocio
+     * @param socios
+     * @return String
+     */
+    
     public static ArrayList<Socio> buscarSocioPorTelefono(String telSocio, ArrayList<Socio> socios) {
         ArrayList<Socio> ret = new ArrayList<Socio>();
         for (Socio s : socios) {
@@ -352,6 +393,7 @@ public class Socio {
      * @param array de Socios
      * @return ArrayList de Socios
      */
+    
     public static final ArrayList<Socio> convertir(Socio[] array) {
         ArrayList<Socio> ret = new ArrayList<Socio>();
         for (Socio s : array) {
