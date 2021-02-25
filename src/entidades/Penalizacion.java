@@ -18,20 +18,23 @@ public class Penalizacion {
     private long id;
     private String motivo;
     private String fecha;
+    private int idSocio;
 
     public Penalizacion() {
     }
 
-    public Penalizacion(long id, String motivo, String fecha) {
+    public Penalizacion(long id, String motivo, String fecha, int idSocio) {
         this.id = id;
         this.motivo = motivo;
         this.fecha = fecha;
+        this.idSocio = idSocio;
     }
     
         public Penalizacion(Penalizacion p) {
         this.id = p.id;
         this.motivo = p.motivo;
         this.fecha = p.fecha;
+        this.idSocio = p.idSocio;
     }
 
     public long getId() {
@@ -58,6 +61,15 @@ public class Penalizacion {
         this.fecha = fecha;
     }
 
+    public int getIdSocio() {
+        return idSocio;
+    }
+
+    public void setIdSocio(int idSocio) {
+        this.idSocio = idSocio;
+    }
+
+    
     
     public static Penalizacion nuevaPenalizacion(){
         Penalizacion pen = new Penalizacion();
