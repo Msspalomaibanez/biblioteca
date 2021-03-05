@@ -57,7 +57,7 @@ public class Elemento {
         Genero gen = Genero.nuevoGenero();
         System.out.println("Si desea crear un libro pulsa 1 y si desea crear un DVD pulsa 2.");
         int opcion = in.nextInt();
-        if (opcion != 1 || opcion != 2)
+        if (opcion != 1 && opcion != 2)
             do {
                 System.out.println("Has introducido un valor incorrecto.");
                 System.out.println("Vuelve a introducir un valor válido.");
