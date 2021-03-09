@@ -79,9 +79,26 @@ public class Proveedor {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Introduce el nombre del nuevo proveedor:");
-        pro.setNombre(in.nextLine());
+        String nmb = in.nextLine();
+        //validarString()
+        if (nmb.isEmpty() || nmb.length() < 2 || nmb.length() > 150) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido.");
+                in = new Scanner(System.in, "ISO 8859-1");
+                nmb = in.nextLine();
+            } while(nmb.isEmpty() || nmb.length() < 2 || nmb.length() > 150);
+        }
         System.out.println("Introduce el teléfono del nuevo proveedor:");
-        pro.setTelefono(in.nextLine());
+        String tel = in.nextLine();
+        if (tel.isEmpty() || tel.length() != 9) {
+            do {
+                System.out.println("Has introducido un valor incorrecto.");
+                System.out.println("Introduce un valor válido.");
+                in = new Scanner(System.in, "ISO 8859-1");
+                tel = in.nextLine();
+            } while(tel.isEmpty() || tel.length() != 9);
+        }
 
         return pro;
     }

@@ -50,7 +50,7 @@ public class Lote {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Introduce la fecha de entrega del nuevo lote:");
-        lt.setFecha(in.nextLine());
+        String fch = in.nextLine();
 
         return lt;
     }

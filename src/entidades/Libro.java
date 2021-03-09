@@ -110,7 +110,7 @@ public class Libro extends Elemento {
                 System.out.println("Introduce un valor válido.");
                 in = new Scanner(System.in, "ISO 8859-1");
                 aut = in.nextLine();
-            } while (aut.isEmpty());
+            } while (aut.isEmpty() || aut.length() < 2 || aut.length() > 150);
         }
         System.out.println("Introduce el número de páginas del nuevo libro");
         String pag = in.nextLine();
