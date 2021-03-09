@@ -52,12 +52,12 @@ public class Utilidades {
     public static final int numEstados = ESTADOS.length;
 
     /**
-     * public Penalizacion(long id, String motivo, Date fecha)
+     * public Penalizacion(long id, String motivo, Date fecha, int idSocio)
      */
     public static final Penalizacion PENALIZACIONES[] = {
-        new Penalizacion(1, "Retraso en la entrega", "13-12-2020"),
-        new Penalizacion(2, "Devolución del préstamo en mal estado", "30-12-2020"),
-        new Penalizacion(3, "Restraso en la entrega", "3-1-2021")
+        new Penalizacion(1, "Retraso en la entrega", "13-12-2020",1),
+        new Penalizacion(2, "Devolución del préstamo en mal estado", "30-12-2020",2),
+        new Penalizacion(3, "Restraso en la entrega", "3-1-2021",3)
 
     };
     public static final int numPenalizaciones = PENALIZACIONES.length;
