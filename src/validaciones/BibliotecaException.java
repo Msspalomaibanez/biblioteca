@@ -142,4 +142,32 @@ public class BibliotecaException extends Exception {
         }
         return ret;
     }
+    
+        /**
+     * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
+     * setearla como valor para el estado de la devolucion
+     * 
+     * Cadena de caracteres {"pendiente", "parcial", "completo"}
+     * 
+     * Obligatorio: si
+     * 
+     * Validación usada para los campos: 
+     * - devolucion (estado)
+     * 
+     * Ejemplos válidos: 
+     * 
+     * @param devo cadena de caracteres
+     * @return true de ser un valor válido para la devolucion y false si es que no
+     */
+    
+    public static boolean validarDevolucion (String devo) {
+        boolean ret = true;
+        if (devo.isEmpty()) {
+            ret = false;
+        }
+        if (devo != "pendiente" && devo != "parcial" && devo != "completo") {
+            ret = false;
+        }
+        return ret;
+    }
 }
