@@ -212,6 +212,8 @@ public class BibliotecaException extends Exception {
      * 
      * Ejemplos válidos: 12, 48
      * 
+     * El primer numero indica la planta y el segundo el aula 
+     * 
      * @param aula entero
      * @return true de ser un valor válido para un aula y false si es que no
      */
@@ -219,7 +221,7 @@ public class BibliotecaException extends Exception {
     public static boolean validarAula (int aula) {
         boolean ret = true;
         
-        if (aula < 1 || aula > 48) {
+        if (aula < 11 || aula > 48) {
             ret = false;
         }
         return ret; 
