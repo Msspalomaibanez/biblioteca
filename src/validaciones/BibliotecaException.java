@@ -14,7 +14,7 @@ public class BibliotecaException extends Exception {
     public BibliotecaException(String msg) {
         super (msg);
     }
-    
+     
     /**
      * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
      * setearla como valor para el nombre 
