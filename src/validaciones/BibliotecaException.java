@@ -200,18 +200,28 @@ public class BibliotecaException extends Exception {
     }
     
         /**
-     * Función que se le pasa         y comprueba si es válida para 
-     * setearla como valor para 
+     * Función que se le pasa un entero y comprueba si es válida para 
+     * setearla como valor para el aula
      * 
-     * tipo dato
+     * Entero [0-9]
      * 
-     * Obligatorio: 
+     * Obligatorio: si
      * 
      * Validación usada para los campos:
+     * - aula (curso, visionado)
      * 
-     * Ejemplos válidos: 
+     * Ejemplos válidos: 12, 48
      * 
-     * @param 
-     * @return true de ser un valor válido para      y false si es que no
+     * @param aula entero
+     * @return true de ser un valor válido para un aula y false si es que no
      */
+    
+    public static boolean validarAula (int aula) {
+        boolean ret = true;
+        
+        if (aula < 1 || aula > 48) {
+            ret = false;
+        }
+        return ret; 
+    }
 }
