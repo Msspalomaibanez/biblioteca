@@ -123,6 +123,8 @@ public class BibliotecaException extends Exception {
      * - pelicula (visionado)
      * - direccion (socio)
      * - ubicacion (estanteria)
+     * - motivo (penalizacion)
+     * - concurso (premio)
      * 
      * Ejemplos válidos: 300 la pelicula; El guardian entre el centeno, C/ Siglo XX;
      * seccion A, estanteria f, 2ª balda de "Poesia"...
@@ -170,4 +172,46 @@ public class BibliotecaException extends Exception {
         }
         return ret;
     }
+    
+        /**
+     * Función que se le pasa un entero y comprueba si es válida para 
+     * setearla como valor para el motivo de una penaliz
+     * 
+     * Entero [0-9] en horas
+     * 
+     * Obligatorio: si
+     * 
+     * Validación usada para los campos:
+     * duracion (curso)
+     * 
+     * Ejemplos válidos: 30, 400
+     * 
+     * @param dur entero
+     * @return true de ser un valor válido para la duracion y false si es que no
+     */
+    
+    public static boolean validarDuracion (int dur) {
+        boolean ret = true;
+        
+        if (dur < 1 || dur > 1000) {
+            ret = false;
+        } 
+        return ret;
+    }
+    
+        /**
+     * Función que se le pasa         y comprueba si es válida para 
+     * setearla como valor para 
+     * 
+     * tipo dato
+     * 
+     * Obligatorio: 
+     * 
+     * Validación usada para los campos:
+     * 
+     * Ejemplos válidos: 
+     * 
+     * @param 
+     * @return true de ser un valor válido para      y false si es que no
+     */
 }
