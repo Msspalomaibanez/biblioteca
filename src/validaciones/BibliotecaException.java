@@ -15,8 +15,7 @@ public class BibliotecaException extends Exception {
         super (msg);
     }
     
-        /**
-         * PLANTILLA COMENTARIOS
+    /**
      * Función que se le pasa         y comprueba si es válida para 
      * setearla como valor para 
      * 
@@ -73,16 +72,21 @@ public class BibliotecaException extends Exception {
         return ret;
     }
     
-    /**
+        /**
      * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
      * setearla como valor para el teléfono
      * 
-     * Cadena de caracteres
+     * Cadena de caracteres numérica [0-9] de tamaño fijo a 9 caracteres
      * 
      * Obligatorio: sí
      * 
+     * Validación usada para los campos:
+     * - telefono (socio, proveedor)
+     * 
+     * Ejemplos válidos: 600 43 69 11
+     * 
      * @param tlfn cadena de caracteres
-     * @return true de ser un valor válido para un teléfono y false si es que no
+     * @return true de ser un valor válido para el teléfono y false si es que no
      */
     
     public static boolean validarTlfn (String tlfn) {
