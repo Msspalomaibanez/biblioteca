@@ -140,6 +140,6 @@ public class BibliotecaException extends Exception {
         if (otros.length() < 3 || otros.length() > 150) {
             ret = false;
         }
-        
+        return ret;
     }
 }
