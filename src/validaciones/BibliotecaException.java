@@ -57,22 +57,6 @@ public class BibliotecaException extends Exception {
     
     /**
      * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
-     * setearla como valor para el DNI
-     * 
-     * Cadena de caracteres
-     * 
-     * Obligatorio: sí
-     * 
-     * @param dni cadena de caracteres
-     * @return true de ser un valor válido para un DNI y false si es que no
-     */
-    
-    public static boolean validarDNI (String dni) {
-        boolean ret = true;
-
-    
-    /**
-     * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
      * setearla como valor para el teléfono
      * 
      * Cadena de caracteres
