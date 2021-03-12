@@ -15,6 +15,24 @@ public class BibliotecaException extends Exception {
         super (msg);
     }
     
+        /**
+         * PLANTILLA COMENTARIOS
+     * Función que se le pasa         y comprueba si es válida para 
+     * setearla como valor para 
+     * 
+     * tipo dato
+     * 
+     * Obligatorio: 
+     * 
+     * Validación usada para los campos:
+     * 
+     * Ejemplos válidos: 
+     * 
+     * @param 
+     * @return true de ser un valor válido para      y false si es que no
+     */
+    
+    
     
     /**
      * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
