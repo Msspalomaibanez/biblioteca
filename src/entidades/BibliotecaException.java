@@ -20,9 +20,17 @@ public class BibliotecaException extends Exception {
      * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
      * setearla como valor para el nombre 
      * 
-     * Cadena de caracteres
+     * Cadena de caracteres [3-50 caracteres] [a-z, A-Z], tildes, dieresis y espacios 
      * 
      * Obligatorio: sí
+     * 
+     * Validación usada para los campos:
+     * - nombre, apellido (socio, evento, proveedor, genero)
+     * - autor, editorial (libro)
+     * - titulo (DVD)
+     * 
+     * Ejemplos válidos: Marcos Gutierrez; El guardián entre el centeno; 
+     * Salvat...
      * 
      * @param nombre cadena de caracteres
      * @return true de ser un valor válido para un nombre y false si es que no
@@ -69,5 +77,28 @@ public class BibliotecaException extends Exception {
         }
         
         return ret;
+    }
+    
+    /**
+     * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
+     * setearla como valor para el teléfono
+     * 
+     * Cadena de caracteres
+     * 
+     * Obligatorio: sí
+     * 
+     * @param tlfn cadena de caracteres
+     * @return true de ser un valor válido para un teléfono y false si es que no
+     */
+    
+    public static boolean validarTlfn (String tlfn) {
+        boolean ret = true;
+        if (tlfn.isEmpty()) {
+            ret = false;
+        }
+        if (tlfn.length() != 9) {
+            ret = false;
+        }
+        for (char c : tlfn)
     }
 }
