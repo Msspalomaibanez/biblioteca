@@ -44,10 +44,9 @@ public class BibliotecaException extends Exception {
      * Validación usada para los campos:
      * - nombre, apellido (socio, evento, proveedor, genero)
      * - autor, editorial (libro)
-     * - titulo (DVD)
+     * - tipo (concurso)
      * 
-     * Ejemplos válidos: Marcos Gutierrez; El guardián entre el centeno; 
-     * Salvat...
+     * Ejemplos válidos: Marcos Gutierrez; Salvat...
      * 
      * @param nombre cadena de caracteres
      * @return true de ser un valor válido para un nombre y false si es que no
@@ -76,14 +75,15 @@ public class BibliotecaException extends Exception {
      * Función que se le pasa una cadena de caracteres y comprueba si es válida para 
      * setearla como valor para el teléfono
      * 
-     * Cadena de caracteres numérica [0-9] de tamaño fijo a 9 caracteres
+     * Cadena de caracteres numérica [0-9] que admite espacios y 
+     * de tamaño fijo a 9 caracteres
      * 
      * Obligatorio: sí
      * 
      * Validación usada para los campos:
      * - telefono (socio, proveedor)
      * 
-     * Ejemplos válidos: 600 43 69 11
+     * Ejemplos válidos: 600436911; 722 13 00 53; 620 345 876
      * 
      * @param tlfn cadena de caracteres
      * @return true de ser un valor válido para el teléfono y false si es que no
@@ -94,9 +94,52 @@ public class BibliotecaException extends Exception {
         if (tlfn.isEmpty()) {
             ret = false;
         }
-        if (tlfn.length() != 9) {
+        if (tlfn.length() != 11 && tlfn.length() != 12 && tlfn.length() != 9) {
             ret = false;
         }
-        for (char c : tlfn)
+        for (char c : tlfn.toCharArray()) {
+            if ((Character.isLetter(c) && c != ' ') || !Character.isDigit(c)) {
+                ret = false;
+                break;
+            }
+        }
+        return ret;
+    }
+    
+        /**
+     * Función que se le pasa un campo y comprueba si es válida para 
+     * setearla como valor para varios campos
+     * 
+     * Cadena de caracteres [3-150] [a-z, A-Z], tildes, dieresis, signos de
+     * puntuacion, exclamacion e interrogacion, digitos [0-9], simbolos
+     * alfanumericos y caracteres especiales
+     * 
+     * Obligatorio: sí
+     * 
+     * Validación usada para los campos:
+     * - titulo (DVD)
+     * - libro (lectura)
+     * - nombre (libro)
+     * - pelicula (visionado)
+     * - direccion (socio)
+     * - ubicacion (estanteria)
+     * 
+     * Ejemplos válidos: 300 la pelicula; El guardian entre el centeno, C/ Siglo XX;
+     * seccion A, estanteria f, 2ª balda de "Poesia"...
+     * 
+     * @param otros cadena de caracteres
+     * @return true de ser un valor válido para ciertos campos y false si es que no
+     */
+    
+    public static boolean validarOtrosCampos (String otros) {
+        boolean ret = true;
+        if (otros.isEmpty()) {
+            ret = false;
+        }
+        
+        if (otros.length() < 3 || otros.length() > 150) {
+            ret = false;
+        }
+        
     }
 }
