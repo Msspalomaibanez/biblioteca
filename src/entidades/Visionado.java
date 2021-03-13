@@ -43,7 +43,7 @@ public class Visionado extends Evento {
         this.aula = aula;
     }
 /*constructor con todos los atributos de subclase y supclase*/
-    public Visionado(String pelicula, String aula, long id, String nombre, Date fechaHora) {
+    public Visionado(String pelicula, String aula, int id, String nombre, Date fechaHora) throws BibliotecaException {
         super(id, nombre, fechaHora);
         this.pelicula = pelicula;
         this.aula = aula;
@@ -80,7 +80,7 @@ public class Visionado extends Evento {
         do {
             System.out.println("entre el nombre del pelicula por favor");
             peliculaVisionado = scanner.nextLine();
-        } while (!Utilidades.isValidString(peliculaVisionado));
+        } while (!BibliotecaException.isValidString(peliculaVisionado));
         System.out.println("pelicula es " + peliculaVisionado);
 
         //el segundo atributo
@@ -89,7 +89,7 @@ public class Visionado extends Evento {
         do {
             System.out.println("enter el nombre de aula por favor");
             aulaEvent = scanner.nextLine();
-        } while (!Utilidades.isValidString(aulaEvent));
+        } while (!BibliotecaException.isValidString(aulaEvent));
         System.out.println("aula es " + aulaEvent);
         Visionado ret = new Visionado(peliculaVisionado, aulaEvent, event);
         return ret;
