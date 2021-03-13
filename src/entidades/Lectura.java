@@ -35,7 +35,7 @@ public class Lectura extends Evento {
     }
 
     //constructor con todos los atributos de subclase y supclase
-    public Lectura(String libro, long id, String nombre, Date fechaHora) {
+    public Lectura(String libro, int id, String nombre, Date fechaHora) throws BibliotecaException{
         super(id, nombre, fechaHora);
         this.libro = libro;
     }
@@ -62,7 +62,7 @@ public class Lectura extends Evento {
         do {
             System.out.println("entre el nombre del libro por favor");
             libroLectura = set.nextLine();
-        } while (!Utilidades.isValidString(libroLectura));
+        } while (BibliotecaException.isValidString(libroLectura));
         System.out.println("libro es " + libroLectura);
         Lectura ret = new Lectura(libroLectura, event);
         return ret;
