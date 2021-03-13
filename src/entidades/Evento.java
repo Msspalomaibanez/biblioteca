@@ -20,7 +20,7 @@ public class Evento {
      * los valores invalidos: 0 y Long.MIN_VALUE restricciones: la id del evento
      * no puede ser Duplicada valor valor por defecto: 0
      */
-    protected long id;
+    protected int id;
     private ArrayList<Evento> eventos = new ArrayList<Evento>(); // relación socio y evento
 
     /**
@@ -45,13 +45,28 @@ public class Evento {
     }
 
     /*constructor con todos los atributos*/
-    public Evento(long id, String nombre, Date fechaHora) {
-        this.id = id;
-        this.nombre = nombre;
-        this.fechaHora = fechaHora;
-    }
-
-    /*constructor de copia que tenga como primer parámetro un objeto del tipo de dato de la superclase*/
+    public Evento(int id, String nombre, Date fechaHora) throws BibliotecaException {
+       if (BibliotecaException.isValidIdEvent(id)) {
+            this.id = id;
+        } else {
+            throw new BibliotecaException("El id del evento no tiene un valor válido:" + id);
+        }
+        if (BibliotecaException.isValidString(nombre)) {
+            this.nombre= nombre;
+        } else {
+            throw new BibliotecaException("El nombre del evento no tiene un valor válido:" + nombre);
+        }
+         if (BibliotecaException.isValidFechaEvent(fechaHora)) {
+             this.fechaHora= fechaHora;
+         } else {
+             throw new BibliotecaException("El fechaHora del evento no tiene un valor válido:" + fechaHora);
+         }
+        
+        }
+        /**
+         * constructor de copia que tenga como primer parámetro un objeto del
+         * tipo de dato
+         */
     public Evento(Evento e) {
         this.id = e.id;
         this.nombre = e.nombre;
@@ -63,7 +78,7 @@ public class Evento {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -83,7 +98,7 @@ public class Evento {
         this.fechaHora = fechaHora;
     }
 
-    public static Evento buscarById(long id) {
+    public static Evento buscarById(int id) {
         for (Evento e : Utilidades.EVENTOS) {
             if (e.getId() == id) {
                 return e;
@@ -100,7 +115,7 @@ public class Evento {
             System.out.println("enter id del evento por favor");
             idevento = set.nextInt();
             System.out.println("id es " + idevento);
-        } while (!Utilidades.isValidIdEvent(idevento));
+        } while (!BibliotecaException.isValidIdEvent(idevento));
         event.setId(idevento);
         System.out.println(event.getId());
         // el segundo atributo
@@ -110,17 +125,17 @@ public class Evento {
             System.out.println("enter el nombre de evento por favor");
             nombreEvento = set.nextLine();
             System.out.println("nombre de evento es " + nombreEvento);
-        } while (!Utilidades.isValidString(nombreEvento));
+        } while (!BibliotecaException.isValidString(nombreEvento));
         event.setNombre(nombreEvento);
         System.out.println(event.getNombre());
         // el tercer atributo
         set = new Scanner(System.in);
         String fechaEvent;
         do {
-            System.out.println("enter el Fecha de evento por favor con el seguiente fomato (" + Utilidades.formatString + ")");
+                System.out.println("enter el Fecha de evento por favor con el seguiente fomato (" + Utilidades.formatString + ")");
             fechaEvent = set.nextLine();
             System.out.println("Fecha de evento es " + fechaEvent);
-        } while (Utilidades.isValidFechaEvent(fechaEvent) == null);
+        } while (BibliotecaException.isValidFechaEvent(fechaEvent) == null);
         event.setFechaHora(java.sql.Date.valueOf(fechaEvent));
         System.out.println(event.getFechaHora());
 
@@ -174,7 +189,7 @@ public class Evento {
                     break;
                 case 2:
                     System.out.println("Introduzca el ID del evento a encontrar:");
-                    long idEven = in.nextLong();
+                    int idEven = in.nextInt();
                     buscado = Evento.buscarEventoById(idEven, eventos);
                     if (buscado != null) {
                         System.out.print("Evento encontrado: ");
@@ -200,7 +215,7 @@ public class Evento {
         return null;
     }
 
-    public static Evento buscarEventoById(long idEvento, ArrayList<Evento> eventos) {
+    public static Evento buscarEventoById(int idEvento, ArrayList<Evento> eventos) {
         Evento ret = null;
         for (Evento e : eventos) {
             if (e.getId() == idEvento) {
@@ -240,7 +255,7 @@ public class Evento {
     }
 
     /**
-     * Se trata de una función que convierte un arra de objetos tipo Evento en
+     * Se trata de una función que convierte un array de objetos tipo Evento en
      * un ArrayList de objetos de tipo Evento con los mismos elementos del array
      *
      * @param array de Eventos
