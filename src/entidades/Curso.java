@@ -43,7 +43,7 @@ public class Curso extends Evento {
         this.aula = aula;
     }
  /*constructor con todos los atributos de subclase y supclase*/
-    public Curso(double duracion, String aula, long id, String nombre, Date fechaHora) {
+    public Curso(double duracion, String aula, int id, String nombre, Date fechaHora) throws BibliotecaException{
         super(id, nombre, fechaHora);
         this.duracion = duracion;
         this.aula = aula;
@@ -81,7 +81,7 @@ public class Curso extends Evento {
         do {
             System.out.println("enter duracion por favor");
             duracionCurso = set.nextDouble();
-        } while (!Utilidades.isValidDuracionCurso(duracionCurso));
+        } while (!BibliotecaException.isValidDuracionCurso(duracionCurso));
         System.out.println("duracion es " + duracionCurso);
         //el segundo atributo
         set = new Scanner(System.in);
@@ -89,7 +89,7 @@ public class Curso extends Evento {
         do {
             System.out.println("enter el nombre de aula por favor");
             aulaEvent = set.nextLine();
-        } while (!Utilidades.isValidString(aulaEvent));
+        } while (!BibliotecaException.isValidString(aulaEvent));
         System.out.println("aula es " + aulaEvent);
 
         Curso ret = new Curso((int) duracionCurso, aulaEvent, event);
