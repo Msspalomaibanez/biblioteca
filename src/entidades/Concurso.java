@@ -46,7 +46,7 @@ public class Concurso extends Evento{
         this.premio = premio;
     }
 /*constructor con todos los atributos de subclase y supclase*/
-    public Concurso(String tipo, String premio, long id, String nombre, Date fechaHora) {
+    public Concurso(String tipo, String premio, int id, String nombre, Date fechaHora) throws BibliotecaException {
         super(id, nombre, fechaHora);
         this.tipo = tipo;
         this.premio = premio;
@@ -87,7 +87,7 @@ public class Concurso extends Evento{
         do {
             System.out.println("enter el tipo por favor");
             tipeEvent = set.nextLine();
-        } while (!Utilidades.isValidString(tipeEvent));
+        } while (!BibliotecaException.isValidString(tipeEvent));
         System.out.println("tipo es " + tipeEvent);
         // el segundo atributo
         set = new Scanner(System.in);
@@ -95,7 +95,7 @@ public class Concurso extends Evento{
         do {
             System.out.println("enter primeio por favor");
             premioConcurso = set.nextLine();
-        } while (!Utilidades.isValidString(premioConcurso));
+        } while (!BibliotecaException.isValidString(premioConcurso));
         System.out.println("premio es " + premioConcurso);
 
         Concurso ret = new Concurso(tipeEvent, premioConcurso, event);
